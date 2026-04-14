@@ -7,6 +7,7 @@ import BarilocheSection from "@/components/BarilocheSection";
 import PricingSection from "@/components/PricingSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import AboutSection from "@/components/AboutSection";
+import TeamSection from "@/components/TeamSection";
 import FooterSection from "@/components/FooterSection";
 
 export const Route = createFileRoute("/")({
@@ -36,6 +37,7 @@ function Index() {
         </section>
         <section id="sobre">
           <AboutSection />
+          <TeamSection />
         </section>
       </main>
       <FooterSection />

@@ -1,5 +1,11 @@
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
+import team1 from "@/assets/team-1.png";
+import team2 from "@/assets/team-2.png";
+import team3 from "@/assets/team-3.png";
+import team4 from "@/assets/team-4.png";
+
+const avatarStack = [team1, team2, team3, team4];
 
 const testimonials = [
   {
@@ -60,6 +66,45 @@ export default function TestimonialsSection() {
           <h2 className="mt-3 text-4xl sm:text-5xl font-display font-bold text-foreground">
             O que dizem nossos <span className="text-gradient-brand">viajantes</span>
           </h2>
+
+          {/* Stacked avatars + count */}
+          <div className="mt-6 flex items-center justify-center gap-3">
+            <div className="flex -space-x-3">
+              {avatarStack.map((src, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 + i * 0.1 }}
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-[3px] border-surface-cool overflow-hidden shadow-md"
+                  style={{ zIndex: avatarStack.length - i }}
+                >
+                  <img
+                    src={src}
+                    alt="Viajante satisfeito"
+                    loading="lazy"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-cover object-top"
+                  />
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.7 }}
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-[3px] border-surface-cool bg-gradient-brand flex items-center justify-center shadow-md"
+                style={{ zIndex: 0 }}
+              >
+                <span className="text-primary-foreground text-xs font-bold">+50k</span>
+              </motion.div>
+            </div>
+            <p className="text-sm text-muted-foreground font-medium">
+              Viajantes satisfeitos
+            </p>
+          </div>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

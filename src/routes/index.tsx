@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import IncludedSection from "@/components/IncludedSection";
 import BuenosAiresSection from "@/components/BuenosAiresSection";
 import BarilocheSection from "@/components/BarilocheSection";
+import HotelSection from "@/components/HotelSection";
 import PricingSection from "@/components/PricingSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import AboutSection from "@/components/AboutSection";
@@ -31,6 +32,7 @@ function Index() {
         <IncludedSection />
         <BuenosAiresSection />
         <BarilocheSection />
+        <HotelSection />
         <PricingSection />
         <section id="depoimentos">
           <TestimonialsSection />

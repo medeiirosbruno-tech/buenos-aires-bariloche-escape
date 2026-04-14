@@ -1,68 +1,103 @@
 import { motion } from "framer-motion";
 import circuitoImg from "@/assets/circuito-chico.jpg";
 import cerroImg from "@/assets/cerro-catedral.jpg";
+import { Mountain, Camera, Snowflake } from "lucide-react";
 
 const tours = [
   {
     title: "Circuito Chico",
+    subtitle: "O coração paisagístico da Patagônia",
+    badge: "Natureza",
     image: circuitoImg,
-    desc: "Explore um dos passeios mais encantadores de Bariloche. Paisagens deslumbrantes, montanhas imponentes e lagos de águas cristalinas. A cada parada, um novo cenário de tirar o fôlego — perfeito para fotos e momentos inesquecíveis.",
-    badge: "🌄 Natureza",
+    desc: "Percorra um dos roteiros mais emblemáticos de Bariloche. Lagos de águas cristalinas, montanhas imponentes e florestas ancestrais se revelam a cada curva. Paradas estratégicas para contemplação e fotografias inesquecíveis.",
+    details: [
+      { icon: Mountain, text: "Paisagens de tirar o fôlego" },
+      { icon: Camera, text: "Paradas fotográficas em mirantes" },
+    ],
+    reverse: false,
   },
   {
     title: "Cerro Catedral",
+    subtitle: "O gigante da Patagônia",
+    badge: "Aventura",
     image: cerroImg,
-    desc: "Conheça o maior centro de esqui do hemisfério sul. Mesmo fora da temporada de neve, o local impressiona pela grandiosidade, vistas panorâmicas e estrutura completa. Um destino imperdível para quem ama montanhas e aventura.",
-    badge: "❄️ Aventura",
+    desc: "Visite o maior centro de esqui do hemisfério sul. Mesmo fora da temporada de neve, a grandiosidade do Cerro Catedral impressiona com vistas panorâmicas de 360° e uma estrutura que se integra à montanha.",
+    details: [
+      { icon: Snowflake, text: "Maior centro de esqui do hemisfério sul" },
+      { icon: Mountain, text: "Vistas panorâmicas incomparáveis" },
+    ],
+    reverse: true,
   },
 ];
 
 export default function BarilocheSection() {
   return (
-    <section className="py-20 sm:py-28 bg-surface-warm">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section className="relative py-20 sm:py-32 bg-white overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-electric-azure/30 to-transparent" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-16"
         >
-          <span className="text-sm font-semibold tracking-widest text-primary uppercase">Bariloche</span>
-          <h2 className="mt-3 text-4xl sm:text-5xl font-display font-bold text-foreground">
-            A magia da <span className="text-gradient-brand">Patagônia</span>
+          <div className="flex items-center gap-4 mb-6">
+            <div className="h-px flex-1 bg-gradient-to-r from-electric-azure/40 to-transparent" />
+            <span className="text-electric-azure text-xs font-semibold tracking-[0.25em] uppercase whitespace-nowrap">
+              Fase 02 · 04 a 08/09
+            </span>
+            <div className="h-px flex-1 bg-gradient-to-l from-electric-azure/40 to-transparent" />
+          </div>
+          <h2 className="font-display text-3xl sm:text-5xl text-deep-atlantic text-center">
+            O Despertar da Patagônia
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            De 04 a 08/09 — Hotel La Malinka com café da manhã incluso.
+          <p className="text-deep-atlantic/40 text-center mt-3 text-lg">
+            Cumes nevados e o espelho dos lagos de Bariloche
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="space-y-16 sm:space-y-24">
           {tours.map((tour, i) => (
             <motion.div
               key={tour.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              className="group rounded-2xl overflow-hidden bg-card border border-border hover:shadow-card-hover transition-all duration-500"
+              transition={{ delay: i * 0.1 }}
+              className={`flex flex-col ${tour.reverse ? "lg:flex-row-reverse" : "lg:flex-row"} gap-6 lg:gap-12 items-center`}
             >
-              <div className="relative h-72 overflow-hidden">
-                <img
-                  src={tour.image}
-                  alt={tour.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <span className="inline-block px-3 py-1 rounded-full bg-brand-gold text-brand-gold-foreground text-xs font-bold mb-2">
+              <div className="w-full lg:w-1/2 relative group">
+                <div className="relative overflow-hidden rounded-2xl aspect-[4/3]">
+                  <img
+                    src={tour.image}
+                    alt={tour.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                  <span className="absolute top-4 left-4 px-3 py-1.5 bg-electric-azure/90 text-white text-xs font-semibold rounded-lg backdrop-blur-sm">
                     {tour.badge}
                   </span>
-                  <h3 className="text-2xl font-display font-bold text-primary-foreground">{tour.title}</h3>
                 </div>
               </div>
-              <div className="p-8">
-                <p className="text-muted-foreground leading-relaxed">{tour.desc}</p>
+
+              <div className="w-full lg:w-1/2">
+                <h3 className="font-display text-2xl sm:text-3xl text-deep-atlantic mb-2">
+                  {tour.title}
+                </h3>
+                <p className="text-electric-azure font-medium text-sm mb-4">{tour.subtitle}</p>
+                <p className="text-deep-atlantic/60 leading-relaxed mb-6">{tour.desc}</p>
+                <div className="space-y-3">
+                  {tour.details.map((d) => (
+                    <div key={d.text} className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-electric-azure/10 flex items-center justify-center flex-shrink-0">
+                        <d.icon className="w-4 h-4 text-electric-azure" />
+                      </div>
+                      <span className="text-deep-atlantic/70 text-sm">{d.text}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}

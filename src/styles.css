@@ -55,6 +55,10 @@
   --color-brand-gold-foreground: var(--brand-gold-foreground);
   --color-surface-warm: var(--surface-warm);
   --color-surface-cool: var(--surface-cool);
+  --color-deep-atlantic: var(--deep-atlantic);
+  --color-electric-azure: var(--electric-azure);
+  --color-solar-flare: var(--solar-flare);
+  --color-glacier: var(--glacier);
   --font-display: 'Open Sauce Sans', system-ui, sans-serif;
   --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
@@ -84,6 +88,10 @@
   --brand-gold-foreground: oklch(0.2 0.06 90);
   --surface-warm: oklch(0.97 0.01 80);
   --surface-cool: oklch(0.97 0.01 250);
+  --deep-atlantic: oklch(0.18 0.03 250);
+  --electric-azure: oklch(0.58 0.2 250);
+  --solar-flare: oklch(0.87 0.17 90);
+  --glacier: oklch(0.85 0.02 240);
   --chart-1: oklch(0.58 0.2 250);
   --chart-2: oklch(0.87 0.17 90);
   --chart-3: oklch(0.398 0.07 227.392);

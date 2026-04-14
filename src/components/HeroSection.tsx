@@ -1,100 +1,123 @@
 import { motion } from "framer-motion";
 import heroImg from "@/assets/hero-bariloche.jpg";
-import { Plane, Calendar, MapPin } from "lucide-react";
+import buenosAiresImg from "@/assets/buenos-aires.jpg";
+import { Calendar, MapPin, Users, ChevronDown } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <img
-        src={heroImg}
-        alt="Vista aérea de Bariloche com lago cristalino e montanhas nevadas"
-        className="absolute inset-0 w-full h-full object-cover"
-        width={1920}
-        height={1080}
-      />
-      <div className="absolute inset-0 bg-gradient-hero" />
+    <section className="relative min-h-screen overflow-hidden bg-deep-atlantic">
+      {/* Split background images */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 flex">
+          <div className="w-1/2 relative overflow-hidden hidden md:block">
+            <img
+              src={buenosAiresImg}
+              alt="Buenos Aires"
+              className="absolute inset-0 w-full h-full object-cover scale-110"
+              width={960}
+              height={1080}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-deep-atlantic/60 via-deep-atlantic/40 to-deep-atlantic/80" />
+          </div>
+          <div className="w-full md:w-1/2 relative overflow-hidden">
+            <img
+              src={heroImg}
+              alt="Bariloche"
+              className="absolute inset-0 w-full h-full object-cover scale-110"
+              width={960}
+              height={1080}
+            />
+            <div className="absolute inset-0 bg-gradient-to-l from-deep-atlantic/60 via-deep-atlantic/40 to-deep-atlantic/80" />
+          </div>
+        </div>
+        <div className="absolute inset-0 bg-deep-atlantic/50" />
+      </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center">
+      {/* Center divider line */}
+      <div className="absolute inset-0 hidden md:block">
+        <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-electric-azure/30 to-transparent" />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
+          className="mb-4"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gold text-brand-gold-foreground text-sm font-semibold tracking-wide mb-6">
-            <Plane className="w-4 h-4" />
-            EXTREME VIAGENS — ROTEIRO EXCLUSIVO
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-electric-azure/10 border border-electric-azure/20 text-electric-azure text-sm font-medium backdrop-blur-sm">
+            <Calendar className="w-4 h-4" />
+            01 a 08 de Setembro de 2025
           </span>
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-primary-foreground leading-[1.05] tracking-tight"
+          className="font-display text-4xl sm:text-6xl lg:text-8xl text-white leading-none"
         >
-          Bariloche <span className="italic font-medium">&</span>
-          <br />
-          Buenos Aires
+          <span className="block">BUENOS AIRES</span>
+          <span className="block text-solar-flare text-2xl sm:text-3xl lg:text-4xl font-light tracking-[0.3em] my-2 sm:my-4">+</span>
+          <span className="block">BARILOCHE</span>
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-6 text-lg sm:text-xl text-primary-foreground/80 max-w-2xl mx-auto font-body leading-relaxed"
+          className="mt-6 sm:mt-8 text-glacier/70 text-base sm:text-lg lg:text-xl max-w-2xl leading-relaxed font-light"
         >
-          Uma jornada inesquecível pela Patagônia argentina e a vibrante capital portenha. 8 dias de experiências únicas.
+          8 dias de imersão entre o charme europeu da capital argentina e a grandiosidade selvagem da Patagônia.
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-8 sm:mt-10"
         >
-          <a
-            href="https://wa.me/5500000000000?text=Olá! Tenho interesse no pacote Bariloche + Buenos Aires"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-gold text-brand-gold-foreground font-bold text-lg shadow-premium hover:scale-105 transition-transform duration-300"
-          >
-            Garanta sua vaga
-          </a>
-          <a
-            href="#roteiro"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-primary-foreground/30 text-primary-foreground font-semibold hover:bg-primary-foreground/10 transition-colors duration-300"
-          >
-            Ver roteiro completo
-          </a>
+          {[
+            { icon: MapPin, label: "2 Destinos" },
+            { icon: Calendar, label: "8 Dias" },
+            { icon: Users, label: "Tudo Incluso" },
+          ].map((item) => (
+            <div
+              key={item.label}
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm"
+            >
+              <item.icon className="w-4 h-4 text-electric-azure" />
+              <span className="text-sm font-medium text-glacier/90">{item.label}</span>
+            </div>
+          ))}
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-16 flex flex-wrap items-center justify-center gap-6 sm:gap-10"
+          className="mt-10 sm:mt-12 flex flex-col items-center"
         >
-          {[
-            { icon: Calendar, label: "01 a 08 de Setembro" },
-            { icon: MapPin, label: "Buenos Aires + Bariloche" },
-            { icon: Plane, label: "Aéreo ida e volta incluso" },
-          ].map((item) => (
-            <div key={item.label} className="flex items-center gap-2 text-primary-foreground/70">
-              <item.icon className="w-5 h-5 text-brand-gold" />
-              <span className="text-sm font-medium">{item.label}</span>
-            </div>
-          ))}
+          <div className="text-glacier/50 text-sm mb-1">A partir de</div>
+          <div className="font-display text-5xl sm:text-6xl text-solar-flare">R$ 6.990</div>
+          <div className="text-glacier/50 text-sm mt-1">por pessoa</div>
+          <a
+            href="#reserva"
+            className="mt-6 px-8 sm:px-10 py-4 bg-electric-azure hover:bg-solar-flare text-white hover:text-deep-atlantic font-display font-bold text-base sm:text-lg rounded-xl transition-all duration-300 shadow-2xl shadow-electric-azure/30 hover:shadow-solar-flare/30 hover:scale-105"
+          >
+            Garanta Sua Vaga
+          </a>
         </motion.div>
-      </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-primary-foreground/40 flex items-start justify-center p-1.5"
-        >
-          <div className="w-1.5 h-3 rounded-full bg-primary-foreground/60" />
-        </motion.div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            <ChevronDown className="w-6 h-6 text-glacier/30" />
+          </motion.div>
+        </div>
       </div>
     </section>
   );

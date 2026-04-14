@@ -1,19 +1,44 @@
 import { createFileRoute } from "@tanstack/react-router";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import IncludedSection from "@/components/IncludedSection";
+import BuenosAiresSection from "@/components/BuenosAiresSection";
+import BarilocheSection from "@/components/BarilocheSection";
+import PricingSection from "@/components/PricingSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import AboutSection from "@/components/AboutSection";
+import FooterSection from "@/components/FooterSection";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Bariloche & Buenos Aires — Extreme Viagens" },
+      { name: "description", content: "Pacote exclusivo Bariloche + Buenos Aires. 8 dias de experiências inesquecíveis com a Extreme Viagens. A partir de R$ 6.990." },
+      { property: "og:title", content: "Bariloche & Buenos Aires — Extreme Viagens" },
+      { property: "og:description", content: "Pacote exclusivo com aéreo, hospedagem, passeios e muito mais. 01 a 08 de Setembro." },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <>
+      <Navbar />
+      <main>
+        <HeroSection />
+        <IncludedSection />
+        <BuenosAiresSection />
+        <BarilocheSection />
+        <PricingSection />
+        <section id="depoimentos">
+          <TestimonialsSection />
+        </section>
+        <section id="sobre">
+          <AboutSection />
+        </section>
+      </main>
+      <FooterSection />
+    </>
+  );
 }

@@ -2,103 +2,117 @@ import { motion } from "framer-motion";
 import buenosAiresImg from "@/assets/buenos-aires.jpg";
 import tangoImg from "@/assets/tango.jpg";
 import tigreImg from "@/assets/tigre.jpg";
-import { Clock, MapPin, Globe, Utensils } from "lucide-react";
+import { Clock, MapPin, Languages, Utensils, Wine, Music } from "lucide-react";
 
 const experiences = [
   {
     title: "City Tour Premium",
-    emoji: "🏙️",
+    subtitle: "A alma de Buenos Aires em 5 horas",
+    badge: "City Tour",
     image: buenosAiresImg,
-    desc: "Conheça os principais pontos turísticos com paradas estratégicas para fotos.",
-    details: ["~5 horas de duração", "Saídas diárias", "Busca no hotel", "Guia em português"],
-    places: ["Recoleta", "Floralis Genérica", "Plaza de Mayo", "San Telmo", "La Boca", "Puerto Madero"],
-    highlight: "Ideal para ter uma visão completa da cidade logo no início da viagem.",
+    desc: "Um passeio completo pelos principais cartões-postais de Buenos Aires. Da elegância da Recoleta às cores vibrantes de La Boca, passando pela icônica Plaza de Mayo e o sofisticado Puerto Madero.",
+    details: [
+      { icon: Clock, text: "~5 horas de imersão" },
+      { icon: MapPin, text: "Recoleta, San Telmo, La Boca, Puerto Madero" },
+      { icon: Languages, text: "Guia em Português" },
+    ],
+    reverse: false,
   },
   {
-    title: "Tigre + Delta",
-    emoji: "🚤",
+    title: "Delta do Tigre",
+    subtitle: "O lado sereno de Buenos Aires",
+    badge: "Natureza",
     image: tigreImg,
-    desc: "Explore o famoso Delta do Tigre em uma experiência única fora da cidade.",
-    details: ["Saída ~9h", "Navegação 1h30", "Puerto de Frutos", "Retorno ~14h"],
-    places: [],
-    highlight: "Perfeito para quem quer ver um lado mais tranquilo e diferente de Buenos Aires.",
+    desc: "Navegue por 1h30 pelos canais encantadores do Delta do Tigre. Uma fuga perfeita do ritmo urbano, entre ilhas verdes e casas flutuantes que revelam uma Argentina completamente diferente.",
+    details: [
+      { icon: Clock, text: "Manhã inteira (~9h às 14h)" },
+      { icon: MapPin, text: "Delta do Tigre + Puerto de Frutos" },
+    ],
+    reverse: true,
   },
   {
-    title: "Show de Tango + Jantar",
-    emoji: "💃",
+    title: "Show de Tango Porteño",
+    subtitle: "Uma noite que fica na memória",
+    badge: "Cultura",
     image: tangoImg,
-    desc: "Uma noite inesquecível com um dos shows mais tradicionais da cidade.",
-    details: ["Transporte ida e volta", "Jantar completo", "Bebidas inclusas", "Show profissional"],
-    places: [],
-    highlight: "Uma experiência clássica que não pode faltar em Buenos Aires.",
+    desc: "Viva uma noite inesquecível com jantar completo e um dos espetáculos de tango mais aclamados de Buenos Aires. Transporte incluso, com bebidas e menu de 3 etapas.",
+    details: [
+      { icon: Utensils, text: "Jantar completo incluso" },
+      { icon: Wine, text: "Bebidas inclusas" },
+      { icon: Music, text: "Espetáculo profissional" },
+    ],
+    reverse: false,
   },
 ];
 
 export default function BuenosAiresSection() {
   return (
-    <section id="roteiro" className="py-20 sm:py-28">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section id="experiencias" className="relative py-20 sm:py-32 bg-white overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-solar-flare/40 to-transparent" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-16"
         >
-          <span className="text-sm font-semibold tracking-widest text-primary uppercase">Buenos Aires</span>
-          <h2 className="mt-3 text-4xl sm:text-5xl font-display font-bold text-foreground">
-            Experiência <span className="text-gradient-brand">Completa</span>
+          <div className="flex items-center gap-4 mb-6">
+            <div className="h-px flex-1 bg-gradient-to-r from-solar-flare/40 to-transparent" />
+            <span className="text-solar-flare text-xs font-semibold tracking-[0.25em] uppercase whitespace-nowrap">
+              Fase 01 · 01 a 04/09
+            </span>
+            <div className="h-px flex-1 bg-gradient-to-l from-solar-flare/40 to-transparent" />
+          </div>
+          <h2 className="font-display text-3xl sm:text-5xl text-deep-atlantic text-center">
+            A Alma Portenha
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            3 passeios imperdíveis, cuidadosamente selecionados para você viver o melhor da capital argentina.
+          <p className="text-deep-atlantic/40 text-center mt-3 text-lg">
+            O ritmo do tango e o charme europeu de Buenos Aires
           </p>
         </motion.div>
 
-        <div className="space-y-8">
+        <div className="space-y-16 sm:space-y-24">
           {experiences.map((exp, i) => (
             <motion.div
               key={exp.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              className="group grid md:grid-cols-2 gap-0 rounded-2xl overflow-hidden bg-card border border-border hover:shadow-card-hover transition-all duration-500"
+              transition={{ delay: i * 0.1 }}
+              className={`flex flex-col ${exp.reverse ? "lg:flex-row-reverse" : "lg:flex-row"} gap-6 lg:gap-12 items-center`}
             >
-              <div className={`relative h-64 md:h-auto min-h-[300px] overflow-hidden ${i % 2 === 1 ? 'md:order-2' : ''}`}>
-                <img
-                  src={exp.image}
-                  alt={exp.title}
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-card/90 backdrop-blur-sm text-sm font-bold">
-                  {exp.emoji} {exp.title}
+              <div className="w-full lg:w-1/2 relative group">
+                <div className="relative overflow-hidden rounded-2xl aspect-[4/3]">
+                  <img
+                    src={exp.image}
+                    alt={exp.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                  <span className="absolute top-4 left-4 px-3 py-1.5 bg-electric-azure/90 text-white text-xs font-semibold rounded-lg backdrop-blur-sm">
+                    {exp.badge}
+                  </span>
                 </div>
               </div>
 
-              <div className="p-8 sm:p-10 flex flex-col justify-center">
-                <h3 className="text-2xl sm:text-3xl font-display font-bold text-foreground mb-3">{exp.title}</h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">{exp.desc}</p>
-
-                <div className="grid grid-cols-2 gap-3 mb-6">
+              <div className="w-full lg:w-1/2">
+                <h3 className="font-display text-2xl sm:text-3xl text-deep-atlantic mb-2">
+                  {exp.title}
+                </h3>
+                <p className="text-electric-azure font-medium text-sm mb-4">{exp.subtitle}</p>
+                <p className="text-deep-atlantic/60 leading-relaxed mb-6">{exp.desc}</p>
+                <div className="space-y-3">
                   {exp.details.map((d) => (
-                    <div key={d} className="flex items-center gap-2 text-sm text-foreground">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                      {d}
+                    <div key={d.text} className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-electric-azure/10 flex items-center justify-center flex-shrink-0">
+                        <d.icon className="w-4 h-4 text-electric-azure" />
+                      </div>
+                      <span className="text-deep-atlantic/70 text-sm">{d.text}</span>
                     </div>
                   ))}
                 </div>
-
-                {exp.places.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {exp.places.map((p) => (
-                      <span key={p} className="px-3 py-1 rounded-full bg-accent text-accent-foreground text-xs font-medium">
-                        {p}
-                      </span>
-                    ))}
-                  </div>
-                )}
-
-                <p className="text-sm font-medium text-primary italic">👉 {exp.highlight}</p>
               </div>
             </motion.div>
           ))}

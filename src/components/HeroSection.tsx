@@ -1,131 +1,99 @@
 import { motion } from "framer-motion";
 import heroImg from "@/assets/hero-bariloche.jpg";
-import buenosAiresImg from "@/assets/buenos-aires.jpg";
-import { MapPin, Calendar, Users, ChevronDown } from "lucide-react";
+import { Plane, Calendar, MapPin } from "lucide-react";
 
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Split background images */}
-      <div className="absolute inset-0 flex">
-        <div className="w-1/2 relative overflow-hidden">
-          <img
-            src={buenosAiresImg}
-            alt="Buenos Aires cityscape"
-            className="absolute inset-0 w-full h-full object-cover scale-110"
-            width={960}
-            height={1080}
-          />
-          <div className="absolute bottom-8 left-8 z-10">
-            <span className="text-xs font-semibold text-white/60 tracking-widest uppercase">Buenos Aires</span>
-          </div>
-        </div>
-        <div className="w-1/2 relative overflow-hidden">
-          <img
-            src={heroImg}
-            alt="Bariloche mountains and lake"
-            className="absolute inset-0 w-full h-full object-cover scale-110"
-            width={960}
-            height={1080}
-          />
-          <div className="absolute bottom-8 right-8 z-10">
-            <span className="text-xs font-semibold text-white/60 tracking-widest uppercase">Bariloche</span>
-          </div>
-        </div>
-      </div>
+      <img
+        src={heroImg}
+        alt="Vista aérea de Bariloche com lago cristalino e montanhas nevadas"
+        className="absolute inset-0 w-full h-full object-cover"
+        width={1920}
+        height={1080}
+      />
       <div className="absolute inset-0 bg-gradient-hero" />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
-        {/* Date badge */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-8"
+          transition={{ duration: 0.8 }}
         >
-          <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm text-white/80 text-sm font-medium">
-            <Calendar className="w-4 h-4" />
-            01 a 08 de Setembro de 2025
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gold text-brand-gold-foreground text-sm font-semibold tracking-wide mb-6">
+            <Plane className="w-4 h-4" />
+            EXTREME VIAGENS — ROTEIRO EXCLUSIVO
           </span>
         </motion.div>
 
-        {/* Title */}
-        <motion.div
+        <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
+          className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-primary-foreground leading-[1.05] tracking-tight"
         >
-          <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white leading-[0.9] tracking-[-0.066em]">
-            BARILOCHE
-          </h1>
-          <div className="my-2 sm:my-3">
-            <span className="text-brand-gold text-3xl sm:text-4xl md:text-5xl font-display font-black">+</span>
-          </div>
-          <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white leading-[0.9] tracking-[-0.066em]">
-            BUENOS AIRES
-          </h1>
-        </motion.div>
+          Bariloche <span className="italic font-medium">&</span>
+          <br />
+          Buenos Aires
+        </motion.h1>
 
-        {/* Subtitle */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-8 text-base sm:text-lg text-white/70 max-w-2xl mx-auto font-body leading-relaxed"
+          className="mt-6 text-lg sm:text-xl text-primary-foreground/80 max-w-2xl mx-auto font-body leading-relaxed"
         >
-          8 dias de imersão entre o charme europeu da capital argentina e a grandiosidade selvagem da Patagônia.
+          Uma jornada inesquecível pela Patagônia argentina e a vibrante capital portenha. 8 dias de experiências únicas.
         </motion.p>
 
-        {/* Info pills */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-8 flex flex-wrap items-center justify-center gap-3"
-        >
-          {[
-            { icon: MapPin, label: "2 Destinos" },
-            { icon: Calendar, label: "8 Dias" },
-            { icon: Users, label: "Tudo Incluso" },
-          ].map((item) => (
-            <div key={item.label} className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm">
-              <item.icon className="w-4 h-4 text-white/60" />
-              <span className="text-sm font-medium text-white/80">{item.label}</span>
-            </div>
-          ))}
-        </motion.div>
-
-        {/* Price + CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-10"
+          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <p className="text-sm text-white/50 mb-1">A partir de</p>
-          <p className="text-5xl sm:text-6xl font-display font-black text-gradient-gold leading-none">
-            R$ 6.990
-          </p>
-          <p className="text-sm text-white/50 mt-1">por pessoa</p>
-
           <a
-            href="https://wa.me/5500000000000?text=Olá! Quero garantir minha vaga no pacote Bariloche + Buenos Aires"
+            href="https://wa.me/5500000000000?text=Olá! Tenho interesse no pacote Bariloche + Buenos Aires"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-8 px-10 py-4 rounded-full bg-gradient-gold text-brand-gold-foreground font-bold text-lg hover:scale-105 transition-transform duration-300 shadow-premium"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-gold text-brand-gold-foreground font-bold text-lg shadow-premium hover:scale-105 transition-transform duration-300"
           >
-            Garanta Sua Vaga
+            Garanta sua vaga
           </a>
+          <a
+            href="#roteiro"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-primary-foreground/30 text-primary-foreground font-semibold hover:bg-primary-foreground/10 transition-colors duration-300"
+          >
+            Ver roteiro completo
+          </a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="mt-16 flex flex-wrap items-center justify-center gap-6 sm:gap-10"
+        >
+          {[
+            { icon: Calendar, label: "01 a 08 de Setembro" },
+            { icon: MapPin, label: "Buenos Aires + Bariloche" },
+            { icon: Plane, label: "Aéreo ida e volta incluso" },
+          ].map((item) => (
+            <div key={item.label} className="flex items-center gap-2 text-primary-foreground/70">
+              <item.icon className="w-5 h-5 text-brand-gold" />
+              <span className="text-sm font-medium">{item.label}</span>
+            </div>
+          ))}
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
+          className="w-6 h-10 rounded-full border-2 border-primary-foreground/40 flex items-start justify-center p-1.5"
         >
-          <ChevronDown className="w-6 h-6 text-white/40" />
+          <div className="w-1.5 h-3 rounded-full bg-primary-foreground/60" />
         </motion.div>
       </div>
     </section>

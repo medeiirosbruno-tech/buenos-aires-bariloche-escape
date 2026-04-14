@@ -5,38 +5,10 @@ import team3 from "@/assets/team-3.png";
 import team4 from "@/assets/team-4.png";
 
 const team = [
-  {
-    name: "Ana Paula Ferreira",
-    role: "Fundadora & CEO",
-    location: "Rio de Janeiro",
-    tag: "Fundadora",
-    img: team1,
-    bio: "40 anos transformando viagens em experiências inesquecíveis ao redor do mundo.",
-  },
-  {
-    name: "Carlos Menezes",
-    role: "Diretor Comercial",
-    location: "São Paulo",
-    tag: "Comercial",
-    img: team2,
-    bio: "Especialista em roteiros premium na América do Sul e Europa há 18 anos.",
-  },
-  {
-    name: "Juliana Costa",
-    role: "Consultora Sênior",
-    location: "Curitiba",
-    tag: "Consultora",
-    img: team3,
-    bio: "Patagônia e Argentina são suas paixões. Já percorreu cada canto de Bariloche.",
-  },
-  {
-    name: "Rafael Drummond",
-    role: "Suporte & Operações",
-    location: "Belo Horizonte",
-    tag: "Operações",
-    img: team4,
-    bio: "Garante que cada detalhe da sua viagem seja executado com perfeição.",
-  },
+  { name: "Ana Paula", role: "Diretora de Viagens", img: team1 },
+  { name: "Rafael Santos", role: "Consultor de Destinos", img: team2 },
+  { name: "Mariana Lima", role: "Atendimento Premium", img: team3 },
+  { name: "Carlos Eduardo", role: "Fundador & CEO", img: team4 },
 ];
 
 export default function TeamSection() {
@@ -47,28 +19,15 @@ export default function TeamSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-4"
+          className="text-center mb-12"
         >
-          <span className="text-xs font-semibold tracking-[0.3em] text-primary uppercase">Nossa Equipe</span>
+          <span className="text-sm font-semibold tracking-widest text-primary uppercase">Nossa equipe</span>
+          <h2 className="mt-3 text-3xl sm:text-4xl font-display font-bold text-foreground">
+            Quem cuida da sua <span className="text-gradient-brand">viagem</span>
+          </h2>
         </motion.div>
-        <motion.h3
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center text-2xl sm:text-3xl font-display font-bold text-foreground mb-4"
-        >
-          Pessoas que vivem o que vendem
-        </motion.h3>
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-center text-sm text-muted-foreground mb-12 max-w-md mx-auto"
-        >
-          Cada membro da nossa equipe já pisou nos destinos que recomenda.
-        </motion.p>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {team.map((member, i) => (
             <motion.div
               key={member.name}
@@ -76,25 +35,27 @@ export default function TeamSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group p-5 rounded-2xl glass-card text-center"
+              className="group text-center"
             >
-              <div className="inline-block px-2.5 py-1 rounded-full bg-primary/15 text-primary text-[10px] font-bold uppercase tracking-wider mb-4">
-                {member.tag}
+              {/* Avatar with ring */}
+              <div className="relative mx-auto w-28 h-28 sm:w-32 sm:h-32 mb-4">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-brand-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md" />
+                <div className="relative w-full h-full rounded-full p-[3px] bg-gradient-to-br from-primary/30 to-brand-gold/30 group-hover:from-primary group-hover:to-brand-gold transition-all duration-500">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-muted">
+                    <img
+                      src={member.img}
+                      alt={member.name}
+                      loading="lazy"
+                      width={512}
+                      height={512}
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                </div>
               </div>
-              <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden border-2 border-border group-hover:border-primary transition-colors duration-500">
-                <img
-                  src={member.img}
-                  alt={member.name}
-                  loading="lazy"
-                  width={80}
-                  height={80}
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-              <h4 className="text-sm font-bold text-foreground">{member.name}</h4>
-              <p className="text-xs text-primary font-medium mt-0.5">{member.role}</p>
-              <p className="text-[11px] text-muted-foreground mt-0.5">{member.location}</p>
-              <p className="text-xs text-muted-foreground mt-3 leading-relaxed">{member.bio}</p>
+
+              <h3 className="text-base font-bold text-foreground">{member.name}</h3>
+              <p className="text-sm text-muted-foreground mt-1">{member.role}</p>
             </motion.div>
           ))}
         </div>

@@ -4,11 +4,10 @@ import HeroSection from "@/components/HeroSection";
 import IncludedSection from "@/components/IncludedSection";
 import BuenosAiresSection from "@/components/BuenosAiresSection";
 import BarilocheSection from "@/components/BarilocheSection";
-import HospedagemSection from "@/components/HospedagemSection";
+import PricingSection from "@/components/PricingSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import AboutSection from "@/components/AboutSection";
 import TeamSection from "@/components/TeamSection";
-import ReservaSection from "@/components/ReservaSection";
 import FooterSection from "@/components/FooterSection";
 
 export const Route = createFileRoute("/")({
@@ -32,13 +31,14 @@ function Index() {
         <IncludedSection />
         <BuenosAiresSection />
         <BarilocheSection />
-        <HospedagemSection />
+        <PricingSection />
         <section id="depoimentos">
           <TestimonialsSection />
         </section>
-        <AboutSection />
-        <TeamSection />
-        <ReservaSection />
+        <section id="sobre">
+          <AboutSection />
+          <TeamSection />
+        </section>
       </main>
       <FooterSection />
     </>

@@ -23,7 +23,7 @@ export default function HeroSection() {
               width={960}
               height={1080}
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-deep-atlantic/70 via-deep-atlantic/50 to-deep-atlantic/85" />
+            <div className="absolute inset-0 bg-gradient-to-r from-deep-atlantic/50 via-deep-atlantic/30 to-deep-atlantic/60" />
           </div>
           <div className="w-full md:w-1/2 relative overflow-hidden">
             <motion.img
@@ -37,10 +37,10 @@ export default function HeroSection() {
               width={960}
               height={1080}
             />
-            <div className="absolute inset-0 bg-gradient-to-l from-deep-atlantic/70 via-deep-atlantic/50 to-deep-atlantic/85" />
+            <div className="absolute inset-0 bg-gradient-to-l from-deep-atlantic/50 via-deep-atlantic/30 to-deep-atlantic/60" />
           </div>
         </div>
-        <div className="absolute inset-0 bg-deep-atlantic/40" />
+        <div className="absolute inset-0 bg-deep-atlantic/20" />
       </div>
 
       {/* Center divider line */}

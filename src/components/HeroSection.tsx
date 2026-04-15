@@ -163,7 +163,7 @@ export default function HeroSection() {
               <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
             </span>
           </motion.a>
-          <p className="text-glacier/30 text-[0.65rem] tracking-wider mt-3 uppercase">Vagas limitadas · Resposta imediata</p>
+          <p className="text-glacier/30 text-[0.65rem] tracking-wider mt-3 uppercase">Vagas limitadas · Resposta imediata · *Valor pode variar conforme aeroporto de origem e tarifa aérea</p>
         </motion.div>
       </div>
     </section>

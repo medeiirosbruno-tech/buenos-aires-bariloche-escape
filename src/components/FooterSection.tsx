@@ -21,7 +21,7 @@ export default function FooterSection() {
               <img
                 src={logoExtreme}
                 alt="Extreme Viagens"
-                className="h-14 w-auto object-contain"
+                className="h-14 w-auto object-contain self-start"
               />
               <div className="space-y-0.5 text-xs text-gray-400">
                 <p>Av. Barão do Rio Branco, 1871 - Centro, Juiz de Fora - MG, 36013-020</p>

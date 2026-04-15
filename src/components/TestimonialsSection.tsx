@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import React, { useRef, useEffect, useState } from "react";
+import avatar1 from "@/assets/avatar-1.jpg";
+import avatar2 from "@/assets/avatar-2.jpg";
+import avatar3 from "@/assets/avatar-3.jpg";
+import avatar4 from "@/assets/avatar-4.jpg";
 
 const testimonials = [
   {
@@ -87,6 +91,19 @@ export default function TestimonialsSection() {
           <h2 className="mt-3 text-4xl sm:text-5xl font-display font-bold text-foreground">
             O que dizem nossos <span className="text-gradient-brand">viajantes</span>
           </h2>
+          <div className="flex items-center justify-center gap-3 mt-6">
+            <div className="flex -space-x-3">
+              {[avatar1, avatar2, avatar3, avatar4].map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt="Viajante"
+                  className="w-9 h-9 rounded-full border-2 border-white object-cover"
+                />
+              ))}
+            </div>
+            <span className="text-muted-foreground text-sm">+2.400 viajantes satisfeitos</span>
+          </div>
         </motion.div>
       </div>
 

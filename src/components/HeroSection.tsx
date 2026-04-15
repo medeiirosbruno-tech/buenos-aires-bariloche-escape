@@ -6,6 +6,8 @@ import { Calendar, MapPin, Users, ChevronDown } from "lucide-react";
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-deep-atlantic z-10 pb-32 sm:pb-40">
+      {/* Bottom gradient fade into next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 sm:h-64 bg-gradient-to-b from-transparent to-deep-atlantic z-20 pointer-events-none" />
       {/* Split background images */}
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 flex w-full h-full">

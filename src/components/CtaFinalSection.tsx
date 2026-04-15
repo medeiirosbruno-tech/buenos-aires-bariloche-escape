@@ -77,13 +77,13 @@ export default function CtaFinalSection() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
               whileHover={{ y: -6 }}
-              className="group relative rounded-3xl overflow-hidden cursor-default"
+              className="group relative rounded-[2rem] overflow-hidden cursor-default"
             >
               {/* Card background */}
-              <div className="absolute inset-0 bg-card border border-border rounded-3xl group-hover:border-primary/20 group-hover:shadow-[0_20px_60px_-15px_rgba(0,132,237,0.15)] transition-all duration-500" />
+              <div className="absolute inset-0 bg-card rounded-[2rem] shadow-[0_16px_40px_rgba(0,0,0,0.06)] group-hover:shadow-[0_20px_60px_-15px_rgba(0,132,237,0.15)] transition-all duration-500" />
 
               {/* Accent gradient */}
-              <div className={`absolute top-0 left-0 right-0 h-32 bg-gradient-to-b ${pillar.accent} rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
+              <div className={`absolute top-0 left-0 right-0 h-32 bg-gradient-to-b ${pillar.accent} rounded-t-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
 
               <div className="relative p-7 sm:p-8">
                 {/* Emoji */}

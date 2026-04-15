@@ -51,7 +51,7 @@ export default function PricingSection() {
           viewport={{ once: true }}
           className="relative"
         >
-          <div className="relative bg-white/[0.04] border border-white/[0.08] backdrop-blur-xl rounded-[2rem] p-6 sm:p-10 lg:p-14 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.4)]">
+          <div className="relative bg-white/[0.04] border border-white/[0.08] backdrop-blur-xl rounded-[2.5rem] overflow-hidden p-6 sm:p-10 lg:p-14 shadow-[0_16px_40px_rgba(0,0,0,0.15)]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
               <div>
                 <h3 className="font-display font-bold text-xl text-white mb-6">O que está incluso</h3>

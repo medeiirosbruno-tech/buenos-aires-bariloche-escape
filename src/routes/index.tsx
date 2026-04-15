@@ -38,6 +38,7 @@ function Index() {
       <section id="sobre">
         <AboutSection />
         <TeamSection />
+        <ExperienceSection />
       </section>
       <FooterSection />
     </main>

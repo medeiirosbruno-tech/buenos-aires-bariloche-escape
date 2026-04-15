@@ -39,7 +39,7 @@ export default function IncludedSection() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ y: -6, scale: 1.02 }}
-              className="group relative p-6 sm:p-8 rounded-[2rem] overflow-hidden bg-white/[0.04] border border-white/[0.08] hover:border-electric-azure/30 transition-all duration-500 hover:bg-white/[0.07] backdrop-blur-sm shadow-[0_16px_40px_rgba(0,0,0,0.12)] hover:shadow-[0_20px_50px_-12px_rgba(0,132,237,0.15)]"
+              className="group relative p-6 sm:p-8 rounded-3xl bg-white/[0.04] border border-white/[0.08] hover:border-electric-azure/30 transition-all duration-500 hover:bg-white/[0.07] backdrop-blur-sm shadow-[0_8px_32px_-8px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_50px_-12px_rgba(0,132,237,0.15)]"
             >
               <div className="w-14 h-14 rounded-2xl bg-electric-azure/10 flex items-center justify-center mb-5 group-hover:bg-electric-azure/20 transition-all duration-500 group-hover:shadow-[0_0_20px_rgba(0,132,237,0.2)]">
                 <item.icon className="w-6 h-6 text-electric-azure" />

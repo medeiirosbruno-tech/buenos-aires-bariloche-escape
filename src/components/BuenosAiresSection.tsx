@@ -75,7 +75,7 @@ export default function BuenosAiresSection() {
           <motion.div
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="mx-auto mt-6 w-fit px-5 py-2.5 rounded-full bg-secondary/20 border border-secondary/30 backdrop-blur-sm shadow-lg"
+            className="mx-auto mt-6 w-fit px-5 py-2.5 rounded-2xl bg-secondary/20 border border-secondary/30 backdrop-blur-sm shadow-lg"
           >
             <span className="text-sm font-bold text-foreground">🎁 Escolha um passeio por nossa conta!</span>
           </motion.div>
@@ -95,7 +95,7 @@ export default function BuenosAiresSection() {
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.5 }}
-                  className="relative overflow-hidden rounded-[2rem] aspect-[4/3] shadow-[0_16px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.15)] transition-shadow duration-500"
+                  className="relative overflow-hidden rounded-3xl aspect-[4/3] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] hover:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.2)] transition-shadow duration-500"
                 >
                   <img
                     src={exp.image}

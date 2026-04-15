@@ -34,8 +34,6 @@ export default function HeroSection() {
         </div>
         {/* Unified overlay for cohesion */}
         <div className="absolute inset-0 bg-deep-atlantic/40" />
-        {/* Extra bottom fill for rounded corners area */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-deep-atlantic" />
       </div>
 
       {/* Center divider line */}

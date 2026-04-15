@@ -73,7 +73,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-display text-4xl sm:text-6xl lg:text-8xl text-white leading-[0.95]"
+          className="font-display text-5xl sm:text-6xl lg:text-8xl text-white leading-[0.95]"
         >
           <span className="block">Bariloche <span className="text-solar-flare">&</span></span>
           <span className="block">Buenos Aires</span>

@@ -50,7 +50,7 @@ export default function IncludedSection() {
           ))}
         </div>
 
-        <div className="flex justify-center mt-16">
+        <div className="flex justify-center mt-10">
           <div className="w-12 h-1.5 rounded-full bg-glacier/25 animate-[grabber-bounce_2.5s_ease-in-out_infinite]" />
         </div>
       </div>

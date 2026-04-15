@@ -41,6 +41,8 @@ export const Route = createRootRoute({
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Bariloche & Buenos Aires 🇦🇷" },
       { name: "twitter:description", content: "8 dias de imersão entre o charme europeu da capital argentina e a grandiosidade selvagem da Patagônia." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/xFCPeW1jNJXD0yypE3TzsFqlKDD3/social-images/social-1776279638733-buenos_bariloche_2.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/xFCPeW1jNJXD0yypE3TzsFqlKDD3/social-images/social-1776279638733-buenos_bariloche_2.webp" },
     ],
     links: [
       {

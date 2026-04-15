@@ -41,6 +41,7 @@ function Index() {
         <TeamSection />
         <ExperienceSection />
       </section>
+      <CtaFinalSection />
       <FooterSection />
     </main>
   );

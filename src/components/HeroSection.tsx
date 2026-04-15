@@ -5,7 +5,7 @@ import { Calendar, MapPin, Users, ChevronDown } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-deep-atlantic rounded-b-[2rem] sm:rounded-b-[3rem]">
+    <section className="relative min-h-screen overflow-hidden bg-deep-atlantic rounded-b-[3rem] sm:rounded-b-[4rem] z-10 pb-24">
       {/* Split background images */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 flex">
@@ -31,6 +31,8 @@ export default function HeroSection() {
           </div>
         </div>
         <div className="absolute inset-0 bg-deep-atlantic/50" />
+        {/* Fill rounded corners */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-deep-atlantic" />
       </div>
 
       {/* Center divider line */}
@@ -44,7 +46,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-6 mt-16"
+          className="mb-6 mt-24"
         >
           <motion.span
             animate={{ scale: [1, 1.05, 1] }}
@@ -114,7 +116,7 @@ export default function HeroSection() {
           </a>
         </motion.div>
 
-        <div className="absolute bottom-16 left-1/2 -translate-x-1/2">
+        <div className="absolute bottom-32 left-1/2 -translate-x-1/2">
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity }}

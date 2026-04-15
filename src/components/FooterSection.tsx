@@ -49,9 +49,9 @@ export default function FooterSection() {
               Segurança e Certificação
             </p>
             <div className="flex items-center justify-center gap-8 flex-wrap">
-              <img src={logoCadastur} alt="Cadastur" className="h-10 w-auto opacity-70" />
-              <img src={logoAbav} alt="ABAV" className="h-12 w-auto opacity-70" />
-              <img src={logoMinisterio} alt="Ministério do Turismo" className="h-10 w-auto opacity-70" />
+              <img src={logoCadastur} alt="Cadastur" className="h-[50px] w-auto opacity-70" />
+              <img src={logoAbav} alt="ABAV" className="h-[60px] w-auto opacity-70" />
+              <img src={logoMinisterio} alt="Ministério do Turismo" className="h-[50px] w-auto opacity-70" />
             </div>
           </div>
         </motion.div>

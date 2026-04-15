@@ -22,14 +22,6 @@ const leaders = [
   },
 ];
 
-const founder = {
-  name: "Marcelo Cruz",
-  role: "Fundador",
-  img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop",
-  quote:
-    "Fundador da Extreme. Sua paixão por conectar pessoas e lugares moldou nossa história. Seu legado vive em cada roteiro que criamos.",
-};
-
 export default function TeamSection() {
   return (
     <section className="py-10 sm:py-14">

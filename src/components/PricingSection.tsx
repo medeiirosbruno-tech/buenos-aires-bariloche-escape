@@ -58,17 +58,17 @@ export default function PricingSection() {
                 <div className="space-y-4">
                   {included.map((item, i) => (
                     <motion.div
-                      key={item}
+                      key={item.text}
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.05 }}
                       className="flex items-center gap-3"
                     >
-                      <div className="w-7 h-7 rounded-xl bg-electric-azure/20 flex items-center justify-center flex-shrink-0 shadow-sm">
-                        <Check className="w-3.5 h-3.5 text-electric-azure" />
+                      <div className="w-7 h-7 rounded-xl bg-electric-azure/20 flex items-center justify-center flex-shrink-0 shadow-sm text-base">
+                        {item.emoji}
                       </div>
-                      <span className="text-glacier/70 text-sm">{item}</span>
+                      <span className="text-glacier/70 text-sm">{item.text}</span>
                     </motion.div>
                   ))}
                 </div>

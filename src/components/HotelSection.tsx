@@ -57,7 +57,7 @@ export default function HotelSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative rounded-3xl overflow-hidden mb-12 aspect-[21/9] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)]"
+          className="relative rounded-[2rem] overflow-hidden mb-12 aspect-[21/9] shadow-xl"
         >
           <img
             src={hotelImg}
@@ -79,7 +79,7 @@ export default function HotelSection() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
               whileHover={{ y: -4 }}
-              className="p-6 sm:p-8 rounded-3xl bg-white border border-border/40 hover:border-electric-azure/30 transition-all duration-500 shadow-[0_8px_30px_-10px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_50px_-15px_rgba(0,132,237,0.12)]"
+              className="p-6 sm:p-8 rounded-[2rem] bg-white border border-border/40 hover:border-electric-azure/30 transition-all duration-500 shadow-xl hover:shadow-2xl"
             >
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-8 h-8 rounded-xl bg-electric-azure/10 flex items-center justify-center">

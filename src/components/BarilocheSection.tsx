@@ -80,7 +80,7 @@ export default function BarilocheSection() {
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.5 }}
-                  className="relative overflow-hidden rounded-3xl aspect-[4/3] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] hover:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.2)] transition-shadow duration-500"
+                  className="relative overflow-hidden rounded-[2rem] aspect-[4/3] shadow-xl hover:shadow-2xl transition-shadow duration-500"
                 >
                   <img
                     src={tour.image}
@@ -104,7 +104,7 @@ export default function BarilocheSection() {
                 <div className="space-y-3">
                   {tour.details.map((d) => (
                     <div key={d.text} className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-electric-azure/10 flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <div className="w-10 h-10 rounded-2xl bg-electric-azure/10 flex items-center justify-center flex-shrink-0 shadow-md">
                         <d.icon className="w-4 h-4 text-electric-azure" />
                       </div>
                       <span className="text-deep-atlantic/70 text-sm">{d.text}</span>

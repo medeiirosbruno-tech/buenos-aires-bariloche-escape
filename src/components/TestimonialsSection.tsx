@@ -121,7 +121,7 @@ export default function TestimonialsSection() {
             key={`${t.name}-${i}`}
             whileHover={{ y: -4, scale: 1.02 }}
             transition={{ duration: 0.3 }}
-            className="flex-shrink-0 w-[300px] sm:w-[340px] p-6 rounded-3xl bg-white border border-border/40 shadow-[0_8px_30px_-10px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_50px_-15px_rgba(0,132,237,0.1)] transition-all duration-500"
+            className="flex-shrink-0 w-[300px] sm:w-[340px] p-6 rounded-[2rem] bg-white border border-border/40 shadow-xl hover:shadow-2xl transition-all duration-500"
           >
             <div className="mb-4">
               <p className="text-sm font-semibold text-foreground">{t.name}</p>

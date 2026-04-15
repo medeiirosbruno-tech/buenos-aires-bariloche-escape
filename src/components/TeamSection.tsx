@@ -1,22 +1,25 @@
 import { motion } from "framer-motion";
+import anaLuciaImg from "@/assets/ana-lucia.png";
+import bernardoImg from "@/assets/bernardo.png";
+import brunoImg from "@/assets/bruno.jpeg";
 
 const leaders = [
   {
     name: "Ana Lucia Miranda",
     role: "Co-fundadora",
-    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop",
+    img: anaLuciaImg,
     bio: "Ao lado de Marcelo Cruz, construiu nossa reputação. Esposa, proprietária e Guia Cadastur, ela é a alma acolhedora que garante que cada viagem tenha o cuidado e a segurança de uma família.",
   },
   {
     name: "Bernardo Miranda",
     role: "CEO & Diretor",
-    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop",
+    img: bernardoImg,
     bio: "Filho de Marcelo, Bernardo une o legado de 35 anos à inovação. Guia Cadastur e líder visionário, ele conduz a Extreme rumo a novos horizontes sem perder nossa essência.",
   },
   {
     name: "Bruno Medeiros",
     role: "Diretor Comercial",
-    img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&auto=format&fit=crop",
+    img: brunoImg,
     bio: "A força estratégica do marketing. Com mais de 12 anos de experiência e bagagem de multinacionais e resorts como Aldeia das Águas, Bruno eleva a Extreme a um padrão de excelência global.",
   },
 ];

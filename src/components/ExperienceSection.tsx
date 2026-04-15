@@ -94,7 +94,7 @@ export default function ExperienceSection() {
             >
               A Experiência
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-100 to-white">
+              <span className="inline-block px-3 py-1 rounded-lg bg-[#001a4d] text-white">
                 Extreme Viagens
               </span>
             </motion.h2>

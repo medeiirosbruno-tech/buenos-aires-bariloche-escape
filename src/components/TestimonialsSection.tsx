@@ -47,7 +47,7 @@ const duplicated = [...testimonials, ...testimonials];
 export default function TestimonialsSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number>(0);
   const scrollPos = useRef(0);
 
   useEffect(() => {

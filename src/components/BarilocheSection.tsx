@@ -80,7 +80,7 @@ export default function BarilocheSection() {
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.5 }}
-                  className="relative overflow-hidden rounded-3xl aspect-[4/3] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] hover:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.2)] transition-shadow duration-500"
+                  className="relative overflow-hidden rounded-[2rem] aspect-[4/3] shadow-[0_16px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.15)] transition-shadow duration-500"
                 >
                   <img
                     src={tour.image}

@@ -139,11 +139,11 @@ export default function HeroSection() {
             Garanta Sua Vaga
           </motion.a>
           <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="mt-6"
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+            className="mt-8"
           >
-            <ChevronDown className="w-6 h-6 text-glacier/30" />
+            <div className="w-10 h-1 rounded-full bg-glacier/25" />
           </motion.div>
         </motion.div>
       </div>

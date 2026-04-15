@@ -1,23 +1,23 @@
 import { motion } from "framer-motion";
-import { Phone, Shield, Sparkles, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const pillars = [
   {
-    icon: Phone,
+    emoji: "🤝",
     title: "Atendimento Humano de Verdade",
     description:
       "Nada de robôs ou respostas automáticas. Na Extreme, você fala com quem entende, se importa e cuida da sua viagem como se fosse a própria.",
     accent: "from-sky-300/30 to-blue-400/10",
   },
   {
-    icon: Shield,
+    emoji: "🛡️",
     title: "Suporte 24h do Início ao Fim",
     description:
       "Não é só 'boa viagem'. Estamos com você desde o embarque até a volta pra casa — e em cada imprevisto no caminho.",
     accent: "from-emerald-300/25 to-teal-400/10",
   },
   {
-    icon: Sparkles,
+    emoji: "💰",
     title: "Melhor Preço, Sem Pegadinha",
     description:
       "Pesquisamos com esforço e inteligência até encontrar a melhor opção real. Preço justo de quem conhece o mercado de verdade.",
@@ -49,17 +49,7 @@ export default function CtaFinalSection() {
           </motion.span>
 
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-bold text-foreground leading-[1.1] max-w-4xl mx-auto">
-            Cuidamos de{" "}
-            <span className="relative inline-block">
-              <span className="relative z-10">tudo.</span>
-              <motion.span
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
-                className="absolute bottom-1 left-0 right-0 h-3 md:h-4 bg-secondary/60 -z-0 origin-left rounded-sm"
-              />
-            </span>
+            Cuidamos de tudo.
           </h2>
 
           <p className="mt-6 text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -96,14 +86,8 @@ export default function CtaFinalSection() {
               <div className={`absolute top-0 left-0 right-0 h-32 bg-gradient-to-b ${pillar.accent} rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
 
               <div className="relative p-7 sm:p-8">
-                {/* Icon */}
-                <motion.div
-                  whileHover={{ rotate: [0, -10, 10, 0] }}
-                  transition={{ duration: 0.5 }}
-                  className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/15 flex items-center justify-center mb-5 group-hover:bg-primary group-hover:border-primary transition-all duration-500 shadow-sm group-hover:shadow-[0_8px_30px_-8px_rgba(0,132,237,0.4)]"
-                >
-                  <pillar.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors duration-500" strokeWidth={1.5} />
-                </motion.div>
+                {/* Emoji */}
+                <span className="text-4xl mb-4 block">{pillar.emoji}</span>
 
                 <h3 className="text-lg font-display font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                   {pillar.title}
@@ -112,12 +96,6 @@ export default function CtaFinalSection() {
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {pillar.description}
                 </p>
-
-                {/* Subtle arrow */}
-                <div className="mt-5 flex items-center gap-1.5 text-primary/50 group-hover:text-primary transition-colors duration-300">
-                  <span className="text-xs font-bold uppercase tracking-wider">Saiba mais</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" />
-                </div>
               </div>
             </motion.div>
           ))}

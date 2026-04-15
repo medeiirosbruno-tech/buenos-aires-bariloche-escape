@@ -106,7 +106,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 + i * 0.1 }}
-              className="flex items-center gap-2 px-5 py-3 rounded-2xl bg-white/[0.06] border border-white/[0.1] backdrop-blur-md shadow-[0_4px_24px_-4px_rgba(0,0,0,0.2)] hover:bg-white/[0.1] transition-all duration-500"
+              className="flex items-center gap-2 px-5 py-3 rounded-[1.5rem] bg-white/[0.06] border border-white/[0.1] backdrop-blur-md shadow-lg hover:shadow-xl hover:bg-white/[0.1] transition-all duration-500"
             >
               <item.icon className="w-4 h-4 text-electric-azure" />
               <span className="text-sm font-medium text-glacier/90">{item.label}</span>

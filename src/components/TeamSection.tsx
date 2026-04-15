@@ -55,7 +55,7 @@ export default function TeamSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group bg-muted/50 hover:bg-card p-5 rounded-2xl border border-border hover:border-primary/20 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="group bg-muted/50 hover:bg-card p-5 rounded-[2rem] border border-border hover:border-primary/20 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
             >
               <div className="relative w-20 h-20 mb-4 rounded-full p-0.5 border-2 border-primary/20 group-hover:border-primary/50 transition-colors mx-auto">
                 <img

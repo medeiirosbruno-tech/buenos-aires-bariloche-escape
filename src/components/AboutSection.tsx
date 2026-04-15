@@ -61,7 +61,7 @@ export default function AboutSection() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ y: -4 }}
-              className="p-5 sm:p-6 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 text-center hover:bg-white/15 transition-all duration-500 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.15)]"
+              className="p-5 sm:p-6 rounded-[2rem] bg-white/10 backdrop-blur-xl border border-white/20 text-center hover:bg-white/15 transition-all duration-500 shadow-xl hover:shadow-2xl"
             >
               <stat.icon className="w-6 h-6 text-white/80 mx-auto mb-3" />
               <p className="text-2xl sm:text-3xl font-display font-black text-white">{stat.value}</p>

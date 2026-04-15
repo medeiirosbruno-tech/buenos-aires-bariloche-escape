@@ -5,7 +5,7 @@ const items = [
   { icon: Plane, title: "Aéreo Ida e Volta", desc: "Bagagem de mão 10kg + 1 mochila" },
   { icon: Hotel, title: "Hospedagem Premium", desc: "7 noites em hotéis selecionados" },
   { icon: Bus, title: "Transfers Completos", desc: "Chegada e saída em ambas cidades" },
-  { icon: Map, title: "5 Passeios Inclusos", desc: "Buenos Aires e Bariloche" },
+  { icon: Map, title: "Passeios Inclusos", desc: "Buenos Aires e Bariloche" },
   { icon: Shield, title: "Seguro Viagem", desc: "Cobertura completa inclusa" },
   { icon: Headphones, title: "Suporte 24h", desc: "Assistência durante toda a viagem" },
 ];

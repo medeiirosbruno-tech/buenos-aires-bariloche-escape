@@ -8,6 +8,7 @@ import PricingSection from "@/components/PricingSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import AboutSection from "@/components/AboutSection";
 import TeamSection from "@/components/TeamSection";
+import ExperienceSection from "@/components/ExperienceSection";
 import FooterSection from "@/components/FooterSection";
 
 export const Route = createFileRoute("/")({

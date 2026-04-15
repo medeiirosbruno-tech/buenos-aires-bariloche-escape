@@ -75,12 +75,17 @@ export default function PricingSection() {
               </div>
 
               <div className="flex flex-col items-center justify-center text-center">
-                <div className="mb-6">
-                  <span className="text-glacier/40 text-sm">
+                <div className="mb-8">
+                  <span className="text-glacier/40 text-xs tracking-widest uppercase">
                     Bariloche + Buenos Aires · 01 a 08/09
                   </span>
-                  <div className="flex items-baseline justify-center gap-2 mt-3">
-                    <span className="text-glacier/40 text-lg font-display font-black">R$</span>
+
+                  {/* PIX price */}
+                  <div className="mt-4 mb-1">
+                    <span className="text-electric-azure/60 text-[0.65rem] font-semibold tracking-widest uppercase">No PIX</span>
+                  </div>
+                  <div className="flex items-baseline justify-center gap-1">
+                    <span className="text-glacier/40 text-xl font-display font-bold">R$</span>
                     <motion.span
                       initial={{ scale: 0.9 }}
                       whileInView={{ scale: 1 }}
@@ -88,13 +93,21 @@ export default function PricingSection() {
                       transition={{ type: "spring", stiffness: 200 }}
                       className="font-display font-black text-6xl sm:text-7xl text-solar-flare"
                     >
-                      6.990
+                      5.200
                     </motion.span>
                   </div>
-                  <p className="text-glacier/50 text-sm mt-2">
-                    por pessoa · em apto duplo · saída GIG
+                  <p className="text-glacier/50 text-sm mt-1">
+                    por pessoa · apto duplo · saída GIG
                   </p>
+
+                  {/* Cartão micro card */}
+                  <div className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-white/[0.05] border border-white/[0.08]">
+                    <span className="text-glacier/50 text-sm">ou</span>
+                    <span className="text-glacier/90 font-display font-bold text-sm underline underline-offset-4 decoration-electric-azure/40">12x R$ 650</span>
+                    <span className="text-glacier/50 text-sm">no cartão</span>
+                  </div>
                 </div>
+
                 <motion.a
                   href="https://wa.me/5500000000000?text=Olá! Tenho interesse no pacote Bariloche + Buenos Aires"
                   target="_blank"

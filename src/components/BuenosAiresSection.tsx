@@ -83,7 +83,11 @@ export default function BuenosAiresSection() {
               className={`flex flex-col ${exp.reverse ? "lg:flex-row-reverse" : "lg:flex-row"} gap-6 lg:gap-12 items-center`}
             >
               <div className="w-full lg:w-1/2 relative group">
-                <div className="relative overflow-hidden rounded-2xl aspect-[4/3]">
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.5 }}
+                  className="relative overflow-hidden rounded-3xl aspect-[4/3] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] hover:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.2)] transition-shadow duration-500"
+                >
                   <img
                     src={exp.image}
                     alt={exp.title}
@@ -91,10 +95,10 @@ export default function BuenosAiresSection() {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-                  <span className="absolute top-4 left-4 px-3 py-1.5 bg-electric-azure/90 text-white text-xs font-semibold rounded-lg backdrop-blur-sm">
+                  <span className="absolute top-4 left-4 px-4 py-2 bg-electric-azure/90 text-white text-xs font-semibold rounded-xl backdrop-blur-md shadow-lg">
                     {exp.badge}
                   </span>
-                </div>
+                </motion.div>
               </div>
 
               <div className="w-full lg:w-1/2">
@@ -106,7 +110,7 @@ export default function BuenosAiresSection() {
                 <div className="space-y-3">
                   {exp.details.map((d) => (
                     <div key={d.text} className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-electric-azure/10 flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 rounded-xl bg-electric-azure/10 flex items-center justify-center flex-shrink-0 shadow-sm">
                         <d.icon className="w-4 h-4 text-electric-azure" />
                       </div>
                       <span className="text-deep-atlantic/70 text-sm">{d.text}</span>

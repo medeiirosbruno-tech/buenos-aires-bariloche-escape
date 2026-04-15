@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
+import anaLuciaImg from "@/assets/ana-lucia.png";
+import bernardoImg from "@/assets/bernardo.png";
+import brunoImg from "@/assets/bruno.jpeg";
 
 const leaders = [
   {
     name: "Ana Lucia Miranda",
     role: "Co-fundadora",
-    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop",
+    img: anaLuciaImg,
     bio: "Ao lado de Marcelo Cruz, construiu nossa reputação. Esposa, proprietária e Guia Cadastur, ela é a alma acolhedora que garante que cada viagem tenha o cuidado e a segurança de uma família.",
   },
   {

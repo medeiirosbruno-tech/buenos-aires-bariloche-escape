@@ -145,7 +145,7 @@ export default function HeroSection() {
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            <ChevronDown className="w-6 h-6 text-glacier/30" />
+            <ChevronDown className="w-6 h-6 text-glacier/30 py-0 px-0" />
           </motion.div>
         </div>
       </div>

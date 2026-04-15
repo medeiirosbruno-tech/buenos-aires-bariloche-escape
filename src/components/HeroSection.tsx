@@ -6,38 +6,41 @@ import { Calendar, MapPin, Users, ChevronDown } from "lucide-react";
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-deep-atlantic rounded-b-[4rem] sm:rounded-b-[5rem] z-10 pb-32 sm:pb-36">
-      {/* Split background images */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 flex">
+      {/* Split background images - full bleed edge to edge */}
+      <div className="absolute inset-0 w-full h-full">
+        <div className="absolute inset-0 flex w-full h-full">
           <div className="w-1/2 relative overflow-hidden hidden md:block">
             <img
               src={buenosAiresImg}
               alt="Buenos Aires"
-              className="absolute inset-0 w-full h-full object-cover scale-110"
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ objectPosition: 'center center' }}
               width={960}
               height={1080}
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-deep-atlantic/60 via-deep-atlantic/40 to-deep-atlantic/80" />
+            <div className="absolute inset-0 bg-gradient-to-r from-deep-atlantic/70 via-deep-atlantic/50 to-deep-atlantic/85" />
           </div>
           <div className="w-full md:w-1/2 relative overflow-hidden">
             <img
               src={heroImg}
               alt="Bariloche"
-              className="absolute inset-0 w-full h-full object-cover scale-110"
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ objectPosition: 'center center' }}
               width={960}
               height={1080}
             />
-            <div className="absolute inset-0 bg-gradient-to-l from-deep-atlantic/60 via-deep-atlantic/40 to-deep-atlantic/80" />
+            <div className="absolute inset-0 bg-gradient-to-l from-deep-atlantic/70 via-deep-atlantic/50 to-deep-atlantic/85" />
           </div>
         </div>
-        <div className="absolute inset-0 bg-deep-atlantic/50" />
-        {/* Fill rounded corners */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-deep-atlantic" />
+        {/* Unified overlay for cohesion */}
+        <div className="absolute inset-0 bg-deep-atlantic/40" />
+        {/* Extra bottom fill for rounded corners area */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-deep-atlantic" />
       </div>
 
       {/* Center divider line */}
-      <div className="absolute inset-0 hidden md:block">
-        <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-electric-azure/30 to-transparent" />
+      <div className="absolute inset-0 hidden md:block pointer-events-none">
+        <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-electric-azure/20 to-transparent" />
       </div>
 
       {/* Content */}

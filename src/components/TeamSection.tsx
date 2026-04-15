@@ -82,67 +82,6 @@ export default function TeamSection() {
           ))}
         </div>
 
-        {/* Founder Memorial */}
-        <div className="relative flex flex-col items-center justify-center pt-4 pb-10">
-          <div className="absolute top-0 w-32 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative group rotate-2 hover:rotate-0 transition-all duration-700 ease-out z-20 max-w-sm w-full"
-          >
-            <div className="bg-card p-3 pb-20 rounded-2xl shadow-2xl border border-border/50 relative">
-              <div className="overflow-hidden rounded-xl aspect-square relative grayscale hover:grayscale-0 transition-all duration-1000 bg-muted">
-                <img
-                  alt={`Memorial ${founder.name} - Fundador`}
-                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100"
-                  src={founder.img}
-                  loading="lazy"
-                  width={600}
-                  height={600}
-                />
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors pointer-events-none" />
-              </div>
-              <div className="absolute bottom-5 left-0 right-0 text-center px-5">
-                <h3 className="font-display font-black text-2xl md:text-3xl text-foreground opacity-25 uppercase tracking-[0.2em] mb-1 select-none">
-                  ETERNAMENTE
-                </h3>
-                <div className="absolute inset-0 flex flex-col items-center justify-center pt-2">
-                  <span className="text-foreground font-bold text-lg">
-                    {founder.name} - Fundador
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Desktop quote */}
-            <div className="absolute -top-20 -left-10 bg-foreground text-background p-4 rounded-2xl shadow-xl max-w-[250px] transform -rotate-2 group-hover:rotate-0 transition-transform duration-500 z-30 border border-border/10 hidden md:block">
-              <div className="flex items-center gap-2 mb-1.5">
-                <Award className="w-3.5 h-3.5 text-yellow-400" />
-                <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
-                  Fundador
-                </span>
-              </div>
-              <p className="text-xs font-medium leading-relaxed italic opacity-90">
-                "{founder.quote}"
-              </p>
-            </div>
-
-            {/* Mobile quote */}
-            <div className="md:hidden mt-6 bg-foreground text-background p-4 rounded-2xl shadow-xl border border-border/10">
-              <div className="flex items-center gap-2 mb-1.5">
-                <Award className="w-3.5 h-3.5 text-yellow-400" />
-                <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
-                  Fundador
-                </span>
-              </div>
-              <p className="text-xs font-medium leading-relaxed italic opacity-90">
-                "{founder.quote}"
-              </p>
-            </div>
-          </motion.div>
-        </div>
       </div>
     </section>
   );

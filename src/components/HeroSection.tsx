@@ -125,14 +125,14 @@ export default function HeroSection() {
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             transition={{ delay: 1, type: "spring", stiffness: 200 }}
-            className="flex items-baseline gap-1"
+            className="relative flex items-baseline justify-center"
           >
-            <span className="font-display text-xl sm:text-2xl text-solar-flare/70 font-bold">R$</span>
+            <span className="font-display text-xl sm:text-2xl text-solar-flare/70 font-bold absolute right-full mr-1">R$</span>
             <span className="font-display text-5xl sm:text-6xl text-solar-flare font-black">5.200</span>
           </motion.div>
           <div className="text-glacier/60 text-sm mt-1 font-medium">no PIX · por pessoa</div>
           <div className="mt-3 px-4 py-1.5 rounded-xl bg-white/[0.06] border border-white/[0.08] backdrop-blur-sm">
-            <span className="text-glacier/50 text-xs">ou <span className="text-glacier/80 font-semibold underline underline-offset-2 decoration-electric-azure/40">12x R$ 650</span> no cartão</span>
+            <span className="text-glacier/50 text-xs">ou <span className="text-glacier/80 font-semibold bg-electric-azure/15 px-2 py-0.5 rounded-md">12x R$ 650</span> no cartão</span>
           </div>
           <motion.a
             href="#reserva"

@@ -64,6 +64,7 @@ export default function BarilocheSection() {
           >
             <span className="text-sm font-bold text-foreground">🎁 Escolha um passeio por nossa conta!</span>
           </motion.div>
+        </motion.div>
 
         <div className="space-y-16 sm:space-y-24">
           {tours.map((tour, i) => (

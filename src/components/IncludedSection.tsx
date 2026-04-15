@@ -50,13 +50,9 @@ export default function IncludedSection() {
           ))}
         </div>
 
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-          className="flex justify-center mt-16"
-        >
-          <div className="w-12 h-1.5 rounded-full bg-glacier/25" />
-        </motion.div>
+        <div className="flex justify-center mt-16">
+          <div className="w-12 h-1.5 rounded-full bg-glacier/25 animate-[grabber-bounce_2.5s_ease-in-out_infinite]" />
+        </div>
       </div>
     </section>
   );

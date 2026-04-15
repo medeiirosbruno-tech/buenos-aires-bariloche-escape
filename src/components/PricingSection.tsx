@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 import { Check, CircleAlert } from "lucide-react";
 
 const included = [
-  "Passagens aéreas ida e volta",
-  "7 noites de hospedagem",
-  "Transfers em ambas cidades",
-  "Passeios inclusos",
-  "Seguro viagem completo",
-  "Suporte 24h da agência",
-  "Show de tango com jantar",
-  "Café da manhã em Bariloche",
+  { text: "Passagens aéreas ida e volta", emoji: "✈️" },
+  { text: "7 noites de hospedagem", emoji: "🏨" },
+  { text: "Transfers em ambas cidades", emoji: "🚐" },
+  { text: "Passeios inclusos", emoji: "🗺️" },
+  { text: "Seguro viagem completo", emoji: "🛡️" },
+  { text: "Suporte 24h da agência", emoji: "📞" },
+  { text: "Show de tango com jantar", emoji: "💃" },
+  { text: "Café da manhã em Bariloche", emoji: "☕" },
 ];
 
 const notes = [

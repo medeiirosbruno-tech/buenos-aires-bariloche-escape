@@ -1,56 +1,58 @@
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
-import team1 from "@/assets/team-1.png";
-import team2 from "@/assets/team-2.png";
-import team3 from "@/assets/team-3.png";
-import team4 from "@/assets/team-4.png";
-
-const avatarStack = [team1, team2, team3, team4];
+import avatar1 from "@/assets/avatar-1.jpg";
+import avatar2 from "@/assets/avatar-2.jpg";
+import avatar3 from "@/assets/avatar-3.jpg";
+import avatar4 from "@/assets/avatar-4.jpg";
+import avatar5 from "@/assets/avatar-5.jpg";
+import avatar6 from "@/assets/avatar-6.jpg";
 
 const testimonials = [
   {
     name: "Carla Mendes",
     trip: "Bariloche 2024",
-    avatar: "CM",
-    text: "Simplesmente perfeito! Cada detalhe foi pensado com muito carinho. O hotel em Bariloche tinha uma vista incrível e os passeios foram todos impecáveis. Já quero voltar!",
+    avatar: avatar1,
+    text: "Simplesmente perfeito! Cada detalhe foi pensado com muito carinho. O hotel em Bariloche tinha uma vista incrível e os passeios foram todos impecáveis.",
     rating: 5,
   },
   {
     name: "Roberto Silva",
     trip: "Buenos Aires 2024",
-    avatar: "RS",
-    text: "A Extreme Viagens superou todas as expectativas. O show de tango foi emocionante e o city tour por Buenos Aires nos mostrou cantinhos que nunca encontraríamos sozinhos.",
+    avatar: avatar2,
+    text: "A Extreme Viagens superou todas as expectativas. O show de tango foi emocionante e o city tour nos mostrou cantinhos que nunca encontraríamos sozinhos.",
     rating: 5,
   },
   {
     name: "Fernanda & Lucas",
     trip: "Argentina Completa 2023",
-    avatar: "FL",
-    text: "Viajamos em lua de mel e foi a melhor decisão! O suporte da agência durante toda a viagem nos deu muita tranquilidade. O Circuito Chico é de tirar o fôlego!",
+    avatar: avatar3,
+    text: "Viajamos em lua de mel e foi a melhor decisão! O suporte da agência durante toda a viagem nos deu muita tranquilidade.",
     rating: 5,
   },
   {
     name: "Patrícia Gomes",
     trip: "Bariloche 2023",
-    avatar: "PG",
-    text: "Terceira viagem com a Extreme e cada vez melhor. Profissionalismo, atenção aos detalhes e roteiros incríveis. Não troco por nenhuma outra agência!",
+    avatar: avatar4,
+    text: "Terceira viagem com a Extreme e cada vez melhor. Profissionalismo, atenção aos detalhes e roteiros incríveis.",
     rating: 5,
   },
   {
     name: "André Oliveira",
     trip: "Buenos Aires + Bariloche 2024",
-    avatar: "AO",
-    text: "Levei minha família inteira e todos amaram. As crianças adoraram a neve no Cerro Catedral e nós aproveitamos cada segundo. Atendimento nota 10!",
+    avatar: avatar5,
+    text: "Levei minha família inteira e todos amaram. As crianças adoraram a neve no Cerro Catedral. Atendimento nota 10!",
     rating: 5,
   },
   {
     name: "Juliana Costa",
     trip: "Argentina 2024",
-    avatar: "JC",
-    text: "A navegação pelo Delta do Tigre foi uma surpresa maravilhosa. A equipe da Extreme cuida de tudo, é só curtir. Recomendo de olhos fechados!",
+    avatar: avatar6,
+    text: "A navegação pelo Delta do Tigre foi uma surpresa maravilhosa. A equipe da Extreme cuida de tudo, é só curtir.",
     rating: 5,
   },
 ];
+
+const avatarStack = [avatar1, avatar2, avatar3, avatar4];
 
 export default function TestimonialsSection() {
   return (
@@ -67,7 +69,6 @@ export default function TestimonialsSection() {
             O que dizem nossos <span className="text-gradient-brand">viajantes</span>
           </h2>
 
-          {/* Stacked avatars + count */}
           <div className="mt-6 flex items-center justify-center gap-3">
             <div className="flex -space-x-3">
               {avatarStack.map((src, i) => (
@@ -107,31 +108,36 @@ export default function TestimonialsSection() {
           </div>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="p-7 rounded-2xl bg-card border border-border hover:shadow-card-hover transition-all duration-500"
+              transition={{ delay: i * 0.08 }}
+              className="p-6 rounded-2xl bg-white border border-border/60 hover:shadow-lg transition-all duration-400"
             >
-              <div className="flex gap-1 mb-4">
-                {Array.from({ length: t.rating }).map((_, j) => (
-                  <Star key={j} className="w-4 h-4 fill-brand-gold text-brand-gold" />
-                ))}
-              </div>
-              <p className="text-foreground leading-relaxed mb-6 text-sm">"{t.text}"</p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-brand flex items-center justify-center text-primary-foreground text-xs font-bold">
-                  {t.avatar}
-                </div>
+              <div className="flex items-center gap-3 mb-4">
+                <img
+                  src={t.avatar}
+                  alt={t.name}
+                  loading="lazy"
+                  width={44}
+                  height={44}
+                  className="w-11 h-11 rounded-full object-cover object-top"
+                />
                 <div>
                   <p className="text-sm font-semibold text-foreground">{t.name}</p>
                   <p className="text-xs text-muted-foreground">{t.trip}</p>
                 </div>
               </div>
+              <div className="flex gap-0.5 mb-3">
+                {Array.from({ length: t.rating }).map((_, j) => (
+                  <Star key={j} className="w-3.5 h-3.5 fill-brand-gold text-brand-gold" />
+                ))}
+              </div>
+              <p className="text-foreground/80 leading-relaxed text-sm">"{t.text}"</p>
             </motion.div>
           ))}
         </div>

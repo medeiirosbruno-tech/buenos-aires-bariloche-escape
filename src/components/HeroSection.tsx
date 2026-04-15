@@ -5,7 +5,7 @@ import { Calendar, MapPin, Users, ChevronDown } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-deep-atlantic">
+    <section className="relative min-h-screen overflow-hidden bg-deep-atlantic rounded-b-[2rem] sm:rounded-b-[3rem]">
       {/* Split background images */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 flex">
@@ -44,12 +44,16 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-4"
+          className="mb-6 mt-16"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-electric-azure/10 border border-electric-azure/20 text-electric-azure text-sm font-medium backdrop-blur-sm">
+          <motion.span
+            animate={{ scale: [1, 1.05, 1] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-electric-azure/10 border border-electric-azure/20 text-electric-azure text-sm font-medium backdrop-blur-sm"
+          >
             <Calendar className="w-4 h-4" />
-            01 a 08 de Setembro de 2025
-          </span>
+            Viaje em Setembro
+          </motion.span>
         </motion.div>
 
         <motion.h1
@@ -58,9 +62,9 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-display text-4xl sm:text-6xl lg:text-8xl text-white leading-none"
         >
-          <span className="block">BUENOS AIRES</span>
-          <span className="block text-solar-flare text-2xl sm:text-3xl lg:text-4xl font-light tracking-[0.3em] my-2 sm:my-4">+</span>
           <span className="block">BARILOCHE</span>
+          <span className="block text-solar-flare text-2xl sm:text-3xl lg:text-4xl font-light tracking-[0.3em] my-2 sm:my-4">&</span>
+          <span className="block">BUENOS AIRES</span>
         </motion.h1>
 
         <motion.p
@@ -100,7 +104,7 @@ export default function HeroSection() {
           className="mt-10 sm:mt-12 flex flex-col items-center"
         >
           <div className="text-glacier/50 text-sm mb-1">A partir de</div>
-          <div className="font-display text-5xl sm:text-6xl text-solar-flare">R$ 6.990</div>
+          <div className="font-display text-5xl sm:text-6xl text-solar-flare font-black">R$ 6.990</div>
           <div className="text-glacier/50 text-sm mt-1">por pessoa</div>
           <a
             href="#reserva"
@@ -110,7 +114,7 @@ export default function HeroSection() {
           </a>
         </motion.div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+        <div className="absolute bottom-16 left-1/2 -translate-x-1/2">
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity }}

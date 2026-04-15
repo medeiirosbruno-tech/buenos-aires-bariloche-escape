@@ -37,7 +37,7 @@ export default function PricingSection() {
           <span className="text-solar-flare text-sm font-semibold tracking-[0.2em] uppercase">
             Sua Reserva
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl text-white mt-4">
+          <h2 className="font-display text-3xl sm:text-5xl text-white mt-4 font-black">
             8 Dias. 2 Destinos.
             <br />
             <span className="text-glacier/40">Experiência Completa.</span>
@@ -52,7 +52,6 @@ export default function PricingSection() {
         >
           <div className="relative bg-white/[0.04] border border-white/[0.08] backdrop-blur-xl rounded-3xl p-6 sm:p-10 lg:p-14">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
-              {/* Left - included */}
               <div>
                 <h3 className="font-display font-bold text-xl text-white mb-6">O que está incluso</h3>
                 <div className="space-y-4">
@@ -67,15 +66,14 @@ export default function PricingSection() {
                 </div>
               </div>
 
-              {/* Right - price */}
               <div className="flex flex-col items-center justify-center text-center">
                 <div className="mb-6">
                   <span className="text-glacier/40 text-sm">
                     Bariloche + Buenos Aires · 01 a 08/09
                   </span>
                   <div className="flex items-baseline justify-center gap-2 mt-3">
-                    <span className="text-glacier/40 text-lg">R$</span>
-                    <span className="font-display text-6xl sm:text-7xl text-solar-flare">
+                    <span className="text-glacier/40 text-lg font-display font-black">R$</span>
+                    <span className="font-display font-black text-6xl sm:text-7xl text-solar-flare">
                       6.990
                     </span>
                   </div>
@@ -97,7 +95,6 @@ export default function PricingSection() {
               </div>
             </div>
 
-            {/* Notes */}
             <div className="mt-10 pt-8 border-t border-white/[0.06]">
               <div className="flex items-center gap-2 mb-4">
                 <CircleAlert className="w-4 h-4 text-glacier/30" />

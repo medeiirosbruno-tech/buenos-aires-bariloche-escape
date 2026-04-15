@@ -1,41 +1,48 @@
 import { motion } from "framer-motion";
+import { Headphones, Compass, UserCheck, BookOpen, Plane, Heart } from "lucide-react";
 
 const steps = [
   {
     num: "01",
+    icon: Headphones,
     title: "1º Atendimento",
     description:
-      "Tudo começa com uma escuta atenta. Nosso time entende seus desejos, preferências e expectativas para que cada detalhe reflita o que você sonha viver.",
+      "Tudo começa com uma escuta atenta. Nosso time entende seus desejos para que cada detalhe reflita o que você sonha viver.",
   },
   {
     num: "02",
+    icon: Compass,
     title: "Consultoria Personalizada",
     description:
-      "Nossos consultores elaboram o roteiro ideal, equilibrando conforto, experiências culturais e o ritmo que faz sentido para você.",
+      "Nossos consultores elaboram o roteiro ideal, equilibrando conforto, experiências culturais e o ritmo certo para você.",
   },
   {
     num: "03",
+    icon: UserCheck,
     title: "Sucesso do Viajante",
     description:
-      "Acompanhamos cada etapa da preparação, garantindo clareza em informações, documentação e suporte constante.",
+      "Acompanhamos cada etapa da preparação com clareza, documentação e suporte constante do início ao fim.",
   },
   {
     num: "04",
+    icon: BookOpen,
     title: "Treinamento Pré-Viagem",
     description:
-      "Orientações práticas sobre destino, clima, moeda, o que levar e dicas valiosas para que você viaje seguro e confiante.",
+      "Orientações sobre destino, clima, moeda e dicas valiosas para que você viaje seguro e preparado.",
   },
   {
     num: "05",
+    icon: Plane,
     title: "Sua Viagem",
     description:
-      "Guias experientes, suporte 24h e logística impecável. Paisagens deslumbrantes, momentos autênticos e memórias eternas.",
+      "Guias experientes, suporte 24h e logística impecável. Paisagens deslumbrantes e memórias eternas.",
   },
   {
     num: "06",
+    icon: Heart,
     title: "Pós-Viagem",
     description:
-      "Continuamos ao seu lado. Ouvimos suas histórias, celebramos conquistas e planejamos juntos os próximos destinos.",
+      "Continuamos ao seu lado. Ouvimos suas histórias e planejamos juntos os próximos destinos.",
   },
 ];
 
@@ -46,134 +53,198 @@ export default function ExperienceSection() {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="max-w-6xl mx-auto rounded-[2.5rem] bg-primary p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-[0_30px_80px_-20px_rgba(0,132,237,0.35)]"
+        className="max-w-6xl mx-auto rounded-[2.5rem] relative overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,80,200,0.4)]"
+        style={{
+          background: "linear-gradient(135deg, #0066cc 0%, #0084ed 40%, #00a0ff 70%, #0066cc 100%)",
+        }}
       >
-        {/* Liquid glass background effects */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-white/8 blur-[150px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-white/5 blur-[120px] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/3 w-[300px] h-[300px] rounded-full bg-white/3 blur-[100px] pointer-events-none" />
+        {/* Animated orbs */}
+        <motion.div
+          animate={{ x: [0, 40, 0], y: [0, -30, 0], scale: [1, 1.2, 1] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[-100px] right-[-50px] w-[500px] h-[500px] rounded-full bg-white/10 blur-[120px] pointer-events-none"
+        />
+        <motion.div
+          animate={{ x: [0, -30, 0], y: [0, 40, 0], scale: [1, 1.15, 1] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-[-80px] left-[-60px] w-[400px] h-[400px] rounded-full bg-sky-300/15 blur-[100px] pointer-events-none"
+        />
+        <motion.div
+          animate={{ x: [0, 20, 0], y: [0, -20, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-1/3 left-1/2 w-[250px] h-[250px] rounded-full bg-white/5 blur-[80px] pointer-events-none"
+        />
 
-        {/* Header */}
-        <div className="relative text-center mb-12">
-          <motion.h2
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl md:text-4xl font-display font-bold text-white"
-          >
-            A Experiência
-            <br />
-            Extreme Viagens
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-white/60 mt-4 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed"
-          >
-            Uma abordagem exclusiva que une conforto, cultura e cuidado em cada detalhe para tornar sua jornada verdadeiramente inesquecível.
-          </motion.p>
-        </div>
-
-        {/* Desktop: Horizontal timeline */}
-        <div className="relative hidden md:block">
-          {/* Timeline line */}
-          <div className="absolute left-8 right-8 top-[2.35rem] h-px bg-white/20" />
-
-          {/* Circles row */}
-          <div className="flex justify-between px-8 mb-6">
-            {steps.map((step, i) => (
-              <motion.div
-                key={step.num}
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, type: "spring", stiffness: 300 }}
-                className="relative z-10 w-[1.2rem] h-[1.2rem] rounded-full bg-white shadow-[0_0_20px_rgba(255,255,255,0.4)] border-[3px] border-primary"
-              />
-            ))}
+        <div className="relative p-8 sm:p-12 lg:p-16">
+          {/* Header */}
+          <div className="text-center mb-14">
+            <motion.span
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-block px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 text-white/90 text-xs font-bold tracking-widest uppercase mb-4"
+            >
+              ✦ Nossa Metodologia
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-display font-bold text-white leading-tight"
+            >
+              A Experiência
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-100 to-white">
+                Extreme Viagens
+              </span>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-white/60 mt-5 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed"
+            >
+              Cada viagem transforma. Por isso, criamos uma abordagem exclusiva que une conforto, cultura e cuidado em cada detalhe.
+            </motion.p>
           </div>
 
-          {/* Vertical connector lines */}
-          <div className="flex justify-between px-8 mb-4">
-            {steps.map((step) => (
-              <div key={step.num} className="flex justify-center" style={{ width: "1.2rem" }}>
-                <div className="w-px h-8 bg-white/20" />
+          {/* Desktop: Horizontal timeline */}
+          <div className="hidden lg:block">
+            {/* Timeline bar */}
+            <div className="relative flex items-center justify-between mx-6 mb-2">
+              <div className="absolute left-0 right-0 top-1/2 h-[2px] -translate-y-1/2 rounded-full overflow-hidden">
+                <div className="w-full h-full bg-white/20" />
+                <motion.div
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.5, ease: "easeOut" }}
+                  className="absolute inset-0 bg-gradient-to-r from-white/60 via-sky-200/40 to-white/60 origin-left"
+                />
               </div>
-            ))}
+
+              {steps.map((step, i) => (
+                <motion.div
+                  key={step.num}
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 + i * 0.12, type: "spring", stiffness: 400, damping: 15 }}
+                  className="relative z-10"
+                >
+                  <div className="w-5 h-5 rounded-full bg-white shadow-[0_0_24px_rgba(255,255,255,0.5)] border-[3px] border-sky-400/50" />
+                  <motion.div
+                    animate={{ scale: [1, 1.8, 1], opacity: [0.5, 0, 0.5] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
+                    className="absolute inset-0 rounded-full bg-white/40"
+                  />
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Vertical lines */}
+            <div className="flex justify-between mx-6 mb-5">
+              {steps.map((step) => (
+                <div key={step.num} className="flex justify-center" style={{ width: "1.25rem" }}>
+                  <div className="w-px h-10 bg-gradient-to-b from-white/40 to-white/10" />
+                </div>
+              ))}
+            </div>
+
+            {/* Cards grid */}
+            <div className="grid grid-cols-6 gap-3">
+              {steps.map((step, i) => (
+                <motion.div
+                  key={step.num}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4 + i * 0.1 }}
+                  whileHover={{ y: -8, scale: 1.04 }}
+                  className="group relative rounded-2xl overflow-hidden cursor-default transition-all duration-500"
+                >
+                  {/* Card bg with glass */}
+                  <div className="absolute inset-0 bg-white/[0.12] backdrop-blur-2xl border border-white/25 rounded-2xl group-hover:bg-white/[0.18] group-hover:border-white/40 transition-all duration-500" />
+                  {/* Gradient sheen */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-transparent rounded-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  {/* Glow on hover */}
+                  <div className="absolute -inset-1 bg-gradient-to-br from-sky-300/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 pointer-events-none" />
+
+                  <div className="relative p-4 sm:p-5">
+                    {/* Icon */}
+                    <div className="w-10 h-10 rounded-xl bg-white/15 backdrop-blur-sm border border-white/20 flex items-center justify-center mb-3 group-hover:bg-white/25 group-hover:scale-110 transition-all duration-500 shadow-[0_4px_16px_rgba(0,0,0,0.1)]">
+                      <step.icon className="w-5 h-5 text-white" strokeWidth={1.5} />
+                    </div>
+
+                    <span className="text-[10px] font-bold text-white/35 tracking-[0.2em]">
+                      ETAPA {step.num}
+                    </span>
+                    <h4 className="text-[13px] font-bold text-white uppercase tracking-wide mt-1 mb-2 leading-snug">
+                      {step.title}
+                    </h4>
+                    <p className="text-[11px] text-white/50 leading-relaxed group-hover:text-white/70 transition-colors duration-500">
+                      {step.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
 
-          {/* Step cards */}
-          <div className="grid grid-cols-6 gap-3">
+          {/* Mobile: Vertical timeline */}
+          <div className="lg:hidden space-y-0">
             {steps.map((step, i) => (
               <motion.div
                 key={step.num}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                whileHover={{ y: -6, scale: 1.03 }}
-                className="relative rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 p-4 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.2)] hover:bg-white/15 hover:border-white/30 hover:shadow-[0_16px_48px_-12px_rgba(0,0,0,0.25)] transition-all duration-500 cursor-default"
+                className="relative flex gap-4"
               >
-                {/* Glass sheen */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none" />
-
-                <div className="relative">
-                  <span className="text-[10px] font-bold text-white/40 tracking-widest">
-                    {step.num}
-                  </span>
-                  <h4 className="text-xs font-bold text-white uppercase tracking-wider mt-1 mb-2 leading-snug">
-                    {step.title}
-                  </h4>
-                  <p className="text-[11px] text-white/55 leading-relaxed">
-                    {step.description}
-                  </p>
+                {/* Line + dot */}
+                <div className="flex flex-col items-center">
+                  <div className="relative">
+                    <div className="w-4 h-4 rounded-full bg-white shadow-[0_0_20px_rgba(255,255,255,0.5)] border-[2.5px] border-sky-400/40 flex-shrink-0 z-10" />
+                    <motion.div
+                      animate={{ scale: [1, 2, 1], opacity: [0.4, 0, 0.4] }}
+                      transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
+                      className="absolute inset-0 rounded-full bg-white/30"
+                    />
+                  </div>
+                  {i < steps.length - 1 && (
+                    <div className="w-px flex-1 bg-gradient-to-b from-white/30 to-white/5" />
+                  )}
                 </div>
+
+                {/* Card */}
+                <motion.div
+                  whileHover={{ x: 4 }}
+                  className="mb-4 flex-1 rounded-2xl relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-white/[0.12] backdrop-blur-2xl border border-white/25 rounded-2xl" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent rounded-2xl pointer-events-none" />
+                  <div className="relative p-4 flex gap-3 items-start">
+                    <div className="w-9 h-9 rounded-xl bg-white/15 border border-white/20 flex items-center justify-center flex-shrink-0 shadow-[0_4px_12px_rgba(0,0,0,0.1)]">
+                      <step.icon className="w-4 h-4 text-white" strokeWidth={1.5} />
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-white/35 tracking-[0.15em]">
+                        ETAPA {step.num}
+                      </span>
+                      <h4 className="text-sm font-bold text-white uppercase tracking-wider mt-0.5 mb-1">
+                        {step.title}
+                      </h4>
+                      <p className="text-xs text-white/50 leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
               </motion.div>
             ))}
           </div>
-        </div>
-
-        {/* Mobile: Vertical timeline */}
-        <div className="md:hidden space-y-0">
-          {steps.map((step, i) => (
-            <motion.div
-              key={step.num}
-              initial={{ opacity: 0, x: -15 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="relative flex gap-4"
-            >
-              {/* Line + dot */}
-              <div className="flex flex-col items-center">
-                <div className="w-3.5 h-3.5 rounded-full bg-white shadow-[0_0_14px_rgba(255,255,255,0.4)] border-[2.5px] border-primary flex-shrink-0 z-10" />
-                {i < steps.length - 1 && (
-                  <div className="w-px flex-1 bg-white/15" />
-                )}
-              </div>
-
-              {/* Card */}
-              <motion.div
-                whileHover={{ x: 4 }}
-                className="mb-4 flex-1 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 p-4 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.15)] relative overflow-hidden"
-              >
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/8 via-transparent to-transparent pointer-events-none" />
-                <div className="relative">
-                  <span className="text-[10px] font-bold text-white/40 tracking-widest">
-                    {step.num}
-                  </span>
-                  <h4 className="text-sm font-bold text-white uppercase tracking-wider mt-0.5 mb-1.5">
-                    {step.title}
-                  </h4>
-                  <p className="text-xs text-white/55 leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-              </motion.div>
-            </motion.div>
-          ))}
         </div>
       </motion.div>
     </section>

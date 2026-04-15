@@ -65,7 +65,7 @@ export default function PricingSection() {
                       transition={{ delay: i * 0.05 }}
                       className="flex items-center gap-3"
                     >
-                      <div className="w-7 h-7 rounded-xl bg-electric-azure/20 flex items-center justify-center flex-shrink-0 shadow-sm text-base">
+                      <div className="w-7 h-7 rounded-xl bg-electric-azure/40 flex items-center justify-center flex-shrink-0 shadow-sm text-base">
                         {item.emoji}
                       </div>
                       <span className="text-glacier/70 text-sm">{item.text}</span>

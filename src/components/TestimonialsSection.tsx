@@ -45,7 +45,6 @@ const testimonials = [
   },
 ];
 
-// Duplicate for infinite scroll
 const duplicated = [...testimonials, ...testimonials];
 
 export default function TestimonialsSection() {
@@ -58,7 +57,7 @@ export default function TestimonialsSection() {
     const container = scrollRef.current;
     if (!container) return;
 
-    const speed = 0.5; // px per frame
+    const speed = 0.5;
     const halfWidth = container.scrollWidth / 2;
 
     const animate = () => {
@@ -98,7 +97,7 @@ export default function TestimonialsSection() {
                   key={i}
                   src={src}
                   alt="Viajante"
-                  className="w-9 h-9 rounded-full border-2 border-white object-cover"
+                  className="w-9 h-9 rounded-full border-2 border-white object-cover shadow-md"
                 />
               ))}
             </div>
@@ -118,9 +117,11 @@ export default function TestimonialsSection() {
         style={{ scrollBehavior: "auto" }}
       >
         {duplicated.map((t, i) => (
-          <div
+          <motion.div
             key={`${t.name}-${i}`}
-            className="flex-shrink-0 w-[300px] sm:w-[340px] p-6 rounded-2xl bg-white border border-border/60 shadow-sm hover:shadow-lg transition-all duration-400"
+            whileHover={{ y: -4, scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+            className="flex-shrink-0 w-[300px] sm:w-[340px] p-6 rounded-3xl bg-white border border-border/40 shadow-[0_8px_30px_-10px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_50px_-15px_rgba(0,132,237,0.1)] transition-all duration-500"
           >
             <div className="mb-4">
               <p className="text-sm font-semibold text-foreground">{t.name}</p>
@@ -132,7 +133,7 @@ export default function TestimonialsSection() {
               ))}
             </div>
             <p className="text-foreground/80 leading-relaxed text-sm">"{t.text}"</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

@@ -12,7 +12,7 @@ const items = [
 
 export default function IncludedSection() {
   return (
-    <section id="roteiro" className="relative pt-0 pb-20 sm:pb-32 bg-deep-atlantic -mt-24 rounded-b-[3rem] sm:rounded-b-[4rem] shadow-[0_25px_60px_-15px_rgba(0,20,50,0.5)]">
+    <section id="roteiro" className="relative pt-0 pb-24 sm:pb-36 bg-deep-atlantic -mt-24 rounded-b-[3rem] sm:rounded-b-[5rem] shadow-[0_30px_80px_-20px_rgba(0,20,60,0.5)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -38,9 +38,10 @@ export default function IncludedSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group relative p-6 sm:p-8 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-electric-azure/30 transition-all duration-500 hover:bg-white/[0.05]"
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="group relative p-6 sm:p-8 rounded-3xl bg-white/[0.04] border border-white/[0.08] hover:border-electric-azure/30 transition-all duration-500 hover:bg-white/[0.07] backdrop-blur-sm shadow-[0_8px_32px_-8px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_50px_-12px_rgba(0,132,237,0.15)]"
             >
-              <div className="w-12 h-12 rounded-xl bg-electric-azure/10 flex items-center justify-center mb-5 group-hover:bg-electric-azure/20 transition-colors">
+              <div className="w-14 h-14 rounded-2xl bg-electric-azure/10 flex items-center justify-center mb-5 group-hover:bg-electric-azure/20 transition-all duration-500 group-hover:shadow-[0_0_20px_rgba(0,132,237,0.2)]">
                 <item.icon className="w-6 h-6 text-electric-azure" />
               </div>
               <h3 className="font-display font-bold text-lg text-white mb-2">{item.title}</h3>

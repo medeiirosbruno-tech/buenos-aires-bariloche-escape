@@ -35,17 +35,18 @@ export default function TeamSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="text-center"
+              whileHover={{ y: -6 }}
+              className="text-center group"
             >
               <div className="relative mx-auto w-24 h-24 sm:w-28 sm:h-28 mb-4">
-                <div className="w-full h-full rounded-full overflow-hidden ring-2 ring-border/40 ring-offset-2 ring-offset-background">
+                <div className="w-full h-full rounded-3xl overflow-hidden ring-2 ring-border/30 ring-offset-2 ring-offset-background shadow-[0_8px_30px_-10px_rgba(0,0,0,0.1)] group-hover:shadow-[0_16px_40px_-12px_rgba(0,132,237,0.15)] transition-all duration-500 group-hover:ring-electric-azure/30">
                   <img
                     src={member.img}
                     alt={member.name}
                     loading="lazy"
                     width={112}
                     height={112}
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
               </div>

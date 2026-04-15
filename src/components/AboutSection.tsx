@@ -16,10 +16,11 @@ export default function AboutSection() {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="max-w-6xl mx-auto rounded-3xl bg-electric-azure p-8 sm:p-12 lg:p-16 relative overflow-hidden"
+        className="max-w-6xl mx-auto rounded-[2.5rem] bg-electric-azure p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-[0_30px_80px_-20px_rgba(0,132,237,0.3)]"
       >
-        {/* Subtle glow */}
+        {/* Subtle glow effects */}
         <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-white/10 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-white/5 blur-[100px] pointer-events-none" />
 
         <div className="relative grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left - Text */}
@@ -34,7 +35,11 @@ export default function AboutSection() {
           </div>
 
           {/* Right - Office image card */}
-          <div className="rounded-2xl overflow-hidden shadow-2xl">
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.5 }}
+            className="rounded-3xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)]"
+          >
             <img
               src={officeImg}
               alt="Extreme Viagens - Escritório"
@@ -43,7 +48,7 @@ export default function AboutSection() {
               height={768}
               className="w-full h-full object-cover aspect-[4/3]"
             />
-          </div>
+          </motion.div>
         </div>
 
         {/* Stats - liquid glass cards */}
@@ -55,10 +60,8 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              animate={{ y: [0, -4, 0] }}
-              // @ts-ignore
-              transition={{ delay: i * 0.1, y: { duration: 3 + i * 0.5, repeat: Infinity, ease: "easeInOut" } }}
-              className="p-5 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 text-center hover:bg-white/15 transition-colors duration-500"
+              whileHover={{ y: -4 }}
+              className="p-5 sm:p-6 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 text-center hover:bg-white/15 transition-all duration-500 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.15)]"
             >
               <stat.icon className="w-6 h-6 text-white/80 mx-auto mb-3" />
               <p className="text-2xl sm:text-3xl font-display font-black text-white">{stat.value}</p>

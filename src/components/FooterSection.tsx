@@ -21,7 +21,7 @@ export default function FooterSection() {
               <img
                 src={logoExtreme}
                 alt="Extreme Viagens"
-                className="h-[66px] w-auto object-contain self-start"
+                className="h-[78px] w-auto object-contain self-start"
               />
               <div className="space-y-0.5 text-xs text-gray-400">
                 <p>Av. Barão do Rio Branco, 1871 - Centro, Juiz de Fora - MG, 36013-020</p>
@@ -49,9 +49,9 @@ export default function FooterSection() {
               Segurança e Certificação
             </p>
             <div className="flex items-center justify-center gap-8 flex-wrap">
-              <img src={logoCadastur} alt="Cadastur" className="h-[50px] w-auto opacity-70" />
-              <img src={logoAbav} alt="ABAV" className="h-[60px] w-auto opacity-70" />
-              <img src={logoMinisterio} alt="Ministério do Turismo" className="h-[50px] w-auto opacity-70" />
+              <img src={logoCadastur} alt="Cadastur" className="h-[59px] w-auto opacity-70" />
+              <img src={logoAbav} alt="ABAV" className="h-[71px] w-auto opacity-70" />
+              <img src={logoMinisterio} alt="Ministério do Turismo" className="h-[59px] w-auto opacity-70" />
             </div>
           </div>
         </motion.div>

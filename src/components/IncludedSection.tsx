@@ -12,10 +12,8 @@ const items = [
 
 export default function IncludedSection() {
   return (
-    <section id="roteiro" className="relative py-20 sm:py-32 bg-deep-atlantic">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-electric-azure/20 to-transparent" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="roteiro" className="relative pt-0 pb-20 sm:pb-32 bg-deep-atlantic -mt-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

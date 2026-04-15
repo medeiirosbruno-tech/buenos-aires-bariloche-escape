@@ -59,12 +59,12 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-6 mt-24"
+          className="mb-4 sm:mb-6 mt-24"
         >
           <motion.span
             animate={{ scale: [1, 1.05, 1] }}
             transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-electric-azure/10 border border-electric-azure/20 text-electric-azure text-sm font-medium backdrop-blur-md shadow-[0_8px_32px_-8px_rgba(0,132,237,0.2)]"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:px-5 sm:py-2.5 rounded-2xl bg-electric-azure/10 border border-electric-azure/20 text-electric-azure text-xs sm:text-sm font-medium backdrop-blur-md shadow-[0_8px_32px_-8px_rgba(0,132,237,0.2)]"
           >
             <Calendar className="w-4 h-4" />
             Viaje em Setembro
@@ -75,7 +75,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-display text-5xl sm:text-6xl lg:text-8xl text-white leading-[0.95]"
+          className="font-display text-[3.2rem] sm:text-6xl lg:text-8xl text-white leading-[0.93]"
         >
           <span className="block">Bariloche <span className="text-solar-flare">&</span></span>
           <span className="block">Buenos Aires</span>

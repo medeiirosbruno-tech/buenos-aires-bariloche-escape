@@ -1,42 +1,35 @@
 import { motion } from "framer-motion";
-import { Headphones, Compass, UserCheck, BookOpen, Plane, Heart } from "lucide-react";
 
 const steps = [
   {
-    icon: Headphones,
     title: "1º Atendimento",
     description:
       "Tudo começa com uma escuta atenta. Nosso time entende seus desejos, preferências e expectativas para que cada detalhe da sua viagem reflita exatamente o que você sonha viver.",
   },
   {
-    icon: Compass,
     title: "Consultoria Personalizada",
     description:
-      "Com base no seu perfil, nossos consultores elaboram o roteiro ideal, equilibrando conforto, experiências culturais e o ritmo que faz sentido para você — com conhecimento profundo de cada destino.",
+      "Com base no seu perfil, nossos consultores elaboram o roteiro ideal, equilibrando conforto, experiências culturais e o ritmo que faz sentido para você. Cada sugestão é feita com propósito, cuidado e conhecimento profundo da América do Sul.",
   },
   {
-    icon: UserCheck,
     title: "Sucesso do Viajante",
     description:
-      "Após a escolha do pacote, nossa equipe acompanha cada etapa da preparação, garantindo clareza em informações, documentação e suporte constante. Sua tranquilidade é nossa prioridade.",
+      "Após a escolha do pacote, nossa equipe acompanha cada etapa da preparação, garantindo clareza em informações, documentação e suporte constante. Seu conforto e tranquilidade são nossa prioridade desde o primeiro contato.",
   },
   {
-    icon: BookOpen,
     title: "Treinamento Pré-Viagem",
     description:
-      "Antes do embarque, realizamos um encontro especial com orientações sobre destino, clima, moeda, o que levar e dicas valiosas para que você viaje seguro e preparado para cada momento.",
+      "Antes do embarque, realizamos um encontro especial com orientações práticas sobre o destino, roteiro, clima, moeda, o que levar, cultura local e dicas valiosas para que você viaje seguro e confiante, preparado para aproveitar cada momento ao máximo.",
   },
   {
-    icon: Plane,
     title: "Sua Viagem",
     description:
-      "É hora de viver! Com guias experientes, suporte 24h e logística impecável, você se entrega à experiência: paisagens deslumbrantes, momentos autênticos e memórias que ficam para sempre.",
+      "É hora de viver o que foi planejado com tanto carinho! Com guias experientes, suporte 24h e uma logística impecável, você se entrega à experiência: paisagens deslumbrantes, momentos autênticos e memórias que ficarão para sempre.",
   },
   {
-    icon: Heart,
     title: "Pós-Viagem",
     description:
-      "Ao retornar, continuamos ao seu lado. Queremos ouvir suas histórias e celebrar suas conquistas. É também o momento de planejar juntos os próximos destinos — quem vive a Experiência Extreme, sempre quer repetir.",
+      "Ao retornar, continuamos ao seu lado. Queremos ouvir suas histórias e celebrar suas conquistas. É também o momento de planejar juntos os próximos destinos, porque quem vive a Experiência Extreme, sempre quer repetir.",
   },
 ];
 
@@ -49,72 +42,119 @@ export default function ExperienceSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-14"
+          className="text-center mb-6"
         >
-          <span className="text-primary font-bold tracking-wider text-sm uppercase mb-2 block">
-            Nossa Metodologia
-          </span>
           <h2 className="text-2xl md:text-4xl font-display font-bold text-foreground">
             A Experiência
             <br />
             <span className="text-primary">Extreme Viagens</span>
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-base leading-relaxed">
-            Acreditamos que cada viagem transforma. Por isso, criamos uma abordagem exclusiva que une conforto, cultura e cuidado em cada detalhe para tornar sua jornada verdadeiramente inesquecível.
-          </p>
         </motion.div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical line - desktop */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-border to-transparent -translate-x-1/2" />
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-muted-foreground text-center max-w-3xl mx-auto text-sm sm:text-base leading-relaxed mb-14"
+        >
+          Nós acreditamos que cada viagem transforma, por isso, criamos a metodologia Experiência Extreme, uma abordagem exclusiva que une conforto, cultura e cuidado em cada detalhe para tornar sua jornada verdadeiramente inesquecível.
+        </motion.p>
 
-          <div className="space-y-8 md:space-y-0">
-            {steps.map((step, i) => {
-              const isLeft = i % 2 === 0;
-              return (
-                <motion.div
-                  key={step.title}
-                  initial={{ opacity: 0, x: isLeft ? -30 : 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                  className="relative md:grid md:grid-cols-2 md:gap-10 md:py-6"
-                >
-                  {/* Circle on timeline - desktop */}
-                  <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-primary text-primary-foreground items-center justify-center shadow-lg border-4 border-background">
-                    <span className="text-xs font-bold">{i + 1}</span>
-                  </div>
+        {/* Desktop horizontal timeline */}
+        <div className="hidden md:block">
+          {/* Circles + horizontal line */}
+          <div className="relative flex items-center justify-between mx-8">
+            {/* Horizontal line */}
+            <div className="absolute left-0 right-0 top-1/2 h-px bg-border -translate-y-1/2" />
 
-                  {/* Content card */}
-                  <div
-                    className={`${isLeft ? "md:text-right md:pr-14" : "md:col-start-2 md:pl-14"}`}
-                  >
-                    <div className="bg-muted/50 hover:bg-card p-5 rounded-2xl border border-border hover:border-primary/20 shadow-sm hover:shadow-lg transition-all duration-300 group">
-                      <div className={`flex items-center gap-3 mb-3 ${isLeft ? "md:flex-row-reverse" : ""}`}>
-                        <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                          <step.icon className="w-4.5 h-4.5 text-primary" />
-                        </div>
-                        <h3 className="text-base font-bold text-foreground uppercase tracking-wide">
-                          {step.title}
-                        </h3>
-                        {/* Mobile step number */}
-                        <span className="md:hidden ml-auto flex-shrink-0 w-7 h-7 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center">
-                          {i + 1}
-                        </span>
-                      </div>
-                      <p className={`text-muted-foreground text-sm leading-relaxed ${isLeft ? "md:text-right" : ""}`}>
-                        {step.description}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Empty column for alternating layout */}
-                  {isLeft && <div className="hidden md:block" />}
-                </motion.div>
-              );
-            })}
+            {steps.map((step, i) => (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="relative z-10 w-5 h-5 rounded-full bg-primary border-4 border-background shadow-md"
+              />
+            ))}
           </div>
+
+          {/* Vertical lines from circles */}
+          <div className="relative flex justify-between mx-8 h-12">
+            {steps.map((step, i) => (
+              <div key={step.title} className="flex justify-center" style={{ width: 0 }}>
+                <div className="w-px h-full bg-border" />
+              </div>
+            ))}
+          </div>
+
+          {/* Titles row */}
+          <div className="grid grid-cols-6 gap-4 mb-4">
+            {steps.map((step, i) => (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="text-center"
+              >
+                <h4 className="text-xs font-bold text-foreground uppercase tracking-wider">
+                  {step.title}
+                </h4>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Descriptions row */}
+          <div className="grid grid-cols-6 gap-4">
+            {steps.map((step, i) => (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="text-center"
+              >
+                <p className="text-muted-foreground text-xs leading-relaxed">
+                  {step.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile vertical timeline */}
+        <div className="md:hidden space-y-0">
+          {steps.map((step, i) => (
+            <motion.div
+              key={step.title}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+              className="relative flex gap-4"
+            >
+              {/* Line + circle */}
+              <div className="flex flex-col items-center">
+                <div className="w-4 h-4 rounded-full bg-primary border-4 border-background shadow-md flex-shrink-0 z-10" />
+                {i < steps.length - 1 && (
+                  <div className="w-px flex-1 bg-border" />
+                )}
+              </div>
+
+              {/* Content */}
+              <div className="pb-8">
+                <h4 className="text-sm font-bold text-foreground uppercase tracking-wider mb-1">
+                  {step.title}
+                </h4>
+                <p className="text-muted-foreground text-xs leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

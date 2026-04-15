@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Instagram } from "lucide-react";
 import logoExtreme from "@/assets/logo-extreme.png";
 import logoCadastur from "@/assets/cadastur.png";
 import logoAbav from "@/assets/abav.webp";
@@ -31,6 +32,15 @@ export default function FooterSection() {
                   </a>
                 </p>
                 <p>CNPJ: 29.058.132/0001-56</p>
+                <a
+                  href="https://www.instagram.com/extremeviagens"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-gray-400 hover:text-electric-azure transition-colors mt-1"
+                >
+                  <Instagram className="w-4 h-4" />
+                  <span>@extremeviagens</span>
+                </a>
               </div>
             </div>
 

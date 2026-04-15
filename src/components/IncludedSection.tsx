@@ -12,7 +12,7 @@ const items = [
 
 export default function IncludedSection() {
   return (
-    <section id="roteiro" className="relative pt-0 pb-24 sm:pb-36 bg-deep-atlantic -mt-24 rounded-b-[3rem] sm:rounded-b-[5rem] shadow-[0_30px_80px_-20px_rgba(0,20,60,0.5)]">
+    <section id="roteiro" className="relative z-10 pt-0 pb-24 sm:pb-36 bg-deep-atlantic -mt-24 rounded-b-[3rem] sm:rounded-b-[5rem] shadow-[0_30px_80px_-20px_rgba(0,20,60,0.5)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

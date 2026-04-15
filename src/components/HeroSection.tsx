@@ -138,13 +138,6 @@ export default function HeroSection() {
           >
             Garanta Sua Vaga
           </motion.a>
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-            className="mt-8"
-          >
-            <div className="w-10 h-1 rounded-full bg-glacier/25" />
-          </motion.div>
         </motion.div>
       </div>
     </section>

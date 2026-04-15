@@ -5,7 +5,7 @@ const included = [
   "Passagens aéreas ida e volta",
   "7 noites de hospedagem",
   "Transfers em ambas cidades",
-  "5 passeios inclusos",
+  "Passeios inclusos",
   "Seguro viagem completo",
   "Suporte 24h da agência",
   "Show de tango com jantar",
@@ -77,7 +77,7 @@ export default function PricingSection() {
               <div className="flex flex-col items-center justify-center text-center">
                 <div className="mb-8">
                   <span className="text-glacier/40 text-xs tracking-widest uppercase">
-                    Bariloche + Buenos Aires · 01 a 08/09
+                    Bariloche + Buenos Aires · Setembro
                   </span>
 
                   {/* PIX price */}
@@ -116,7 +116,7 @@ export default function PricingSection() {
                   whileTap={{ scale: 0.98 }}
                   className="w-full max-w-sm px-8 py-4 bg-solar-flare hover:bg-electric-azure text-deep-atlantic hover:text-white font-display font-bold text-lg rounded-2xl transition-all duration-300 shadow-[0_20px_50px_-12px_rgba(255,214,0,0.3)] hover:shadow-[0_20px_50px_-12px_rgba(0,132,237,0.3)] text-center block"
                 >
-                  Falar com um Consultor
+                  Quero garantir minha vaga 🔥
                 </motion.a>
                 <p className="text-glacier/30 text-xs mt-4">
                   Resposta em até 2 horas · Sem compromisso

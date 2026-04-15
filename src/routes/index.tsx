@@ -9,6 +9,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import AboutSection from "@/components/AboutSection";
 import TeamSection from "@/components/TeamSection";
 import ExperienceSection from "@/components/ExperienceSection";
+import CtaFinalSection from "@/components/CtaFinalSection";
 import FooterSection from "@/components/FooterSection";
 
 export const Route = createFileRoute("/")({

@@ -47,7 +47,7 @@ const experiences = [
 
 export default function BuenosAiresSection() {
   return (
-    <section id="experiencias" className="relative pt-32 sm:pt-44 pb-20 sm:pb-32 bg-white overflow-hidden z-0">
+    <section id="experiencias" className="relative pt-44 sm:pt-56 pb-20 sm:pb-32 bg-white overflow-hidden z-0 -mt-[15%]">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-solar-flare/40 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

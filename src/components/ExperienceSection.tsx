@@ -94,7 +94,7 @@ export default function ExperienceSection() {
             >
               A Experiência
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-100 to-white">
+              <span className="inline-block px-3 py-1 rounded-lg bg-[#001a4d] text-white">
                 Extreme Viagens
               </span>
             </motion.h2>
@@ -133,11 +133,11 @@ export default function ExperienceSection() {
                   transition={{ delay: 0.3 + i * 0.12, type: "spring", stiffness: 400, damping: 15 }}
                   className="relative z-10"
                 >
-                  <div className="w-5 h-5 rounded-full bg-white shadow-[0_0_24px_rgba(255,255,255,0.5)] border-[3px] border-sky-400/50" />
+                  <div className="w-5 h-5 rounded-full bg-brand-gold shadow-[0_0_24px_rgba(255,200,0,0.5)] border-[3px] border-brand-gold/50" />
                   <motion.div
                     animate={{ scale: [1, 1.8, 1], opacity: [0.5, 0, 0.5] }}
                     transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
-                    className="absolute inset-0 rounded-full bg-white/40"
+                    className="absolute inset-0 rounded-full bg-brand-gold/40"
                   />
                 </motion.div>
               ))}
@@ -206,11 +206,11 @@ export default function ExperienceSection() {
                 {/* Line + dot */}
                 <div className="flex flex-col items-center">
                   <div className="relative">
-                    <div className="w-4 h-4 rounded-full bg-white shadow-[0_0_20px_rgba(255,255,255,0.5)] border-[2.5px] border-sky-400/40 flex-shrink-0 z-10" />
+                    <div className="w-4 h-4 rounded-full bg-brand-gold shadow-[0_0_20px_rgba(255,200,0,0.5)] border-[2.5px] border-brand-gold/40 flex-shrink-0 z-10" />
                     <motion.div
                       animate={{ scale: [1, 2, 1], opacity: [0.4, 0, 0.4] }}
                       transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
-                      className="absolute inset-0 rounded-full bg-white/30"
+                      className="absolute inset-0 rounded-full bg-brand-gold/30"
                     />
                   </div>
                   {i < steps.length - 1 && (

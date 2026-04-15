@@ -1,27 +1,36 @@
 import { motion } from "framer-motion";
-import { Plane } from "lucide-react";
+import logoExtreme from "@/assets/logo-extreme.png";
 
 export default function FooterSection() {
   return (
-    <footer className="py-12 bg-deep-atlantic border-t border-white/[0.06]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <footer className="py-16 bg-white border-t border-gray-100">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-col sm:flex-row items-center justify-between gap-6"
+          className="flex flex-col items-center gap-6 text-center"
         >
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-electric-azure/20 flex items-center justify-center shadow-[0_4px_16px_-4px_rgba(0,132,237,0.3)]">
-              <Plane className="w-5 h-5 text-electric-azure" />
-            </div>
-            <div>
-              <p className="font-display font-bold text-white">Extreme Viagens</p>
-              <p className="text-xs text-glacier/40">Colecionando momentos desde 1984</p>
-            </div>
+          <img
+            src={logoExtreme}
+            alt="Extreme Viagens"
+            className="h-16 sm:h-20 w-auto"
+          />
+
+          <div className="space-y-1 text-sm text-gray-500">
+            <p>Av. Barão do Rio Branco, 1871 - Centro, Juiz de Fora - MG, 36013-020</p>
+            <p>
+              <a href="mailto:comercial@extremeviagens.com.br" className="hover:text-electric-azure transition-colors">
+                comercial@extremeviagens.com.br
+              </a>
+            </p>
           </div>
 
-          <p className="text-sm text-glacier/40">
+          <p className="text-xs text-gray-400">
+            CNPJ: 29.058.132/0001-56
+          </p>
+
+          <p className="text-xs text-gray-300">
             © {new Date().getFullYear()} Extreme Viagens. Todos os direitos reservados.
           </p>
         </motion.div>

@@ -103,7 +103,7 @@ export default function PricingSection() {
                   {/* Cartão micro card */}
                   <div className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-white/[0.05] border border-white/[0.08]">
                     <span className="text-glacier/50 text-sm">ou</span>
-                    <span className="text-glacier/90 font-display font-bold text-sm underline underline-offset-4 decoration-electric-azure/40">12x R$ 650</span>
+                    <span className="text-glacier/90 font-display font-bold text-sm bg-electric-azure/15 px-2.5 py-1 rounded-lg">12x R$ 650</span>
                     <span className="text-glacier/50 text-sm">no cartão</span>
                   </div>
                 </div>

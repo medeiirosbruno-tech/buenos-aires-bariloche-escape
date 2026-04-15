@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Award } from "lucide-react";
 
 const leaders = [
   {

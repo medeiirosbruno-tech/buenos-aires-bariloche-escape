@@ -49,7 +49,7 @@ export default function CtaFinalSection() {
           </motion.span>
 
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-bold text-foreground leading-[1.1] max-w-4xl mx-auto">
-            Cuidamos de tudo.
+            Cuidamos de tudo. ❤️
           </h2>
 
           <p className="mt-6 text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">

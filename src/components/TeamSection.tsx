@@ -38,7 +38,7 @@ export default function TeamSection() {
           <span className="text-primary font-bold tracking-wider text-sm uppercase mb-2 block">
             Quem faz acontecer
           </span>
-          <h2 className="text-2xl md:text-4xl font-display font-bold text-foreground">
+          <h2 className="text-4xl sm:text-5xl font-display font-bold text-foreground">
             Nossa Liderança
           </h2>
           <p className="text-muted-foreground mt-3 max-w-2xl mx-auto text-base">

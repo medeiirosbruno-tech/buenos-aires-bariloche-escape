@@ -114,8 +114,8 @@ export default function TestimonialsSection() {
         onMouseLeave={() => setIsPaused(false)}
         onTouchStart={() => setIsPaused(true)}
         onTouchEnd={() => setIsPaused(false)}
-        className="flex gap-5 overflow-x-hidden px-6 py-8"
-        style={{ scrollBehavior: "auto" }}
+        className="flex gap-5 overflow-x-hidden px-6 py-8 will-change-scroll"
+        style={{ scrollBehavior: "auto", willChange: "scroll-position" }}
       >
         {duplicated.map((t, i) => (
           <motion.div

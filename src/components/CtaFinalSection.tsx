@@ -112,16 +112,8 @@ export default function CtaFinalSection() {
           }}
         >
           {/* Orbs */}
-          <motion.div
-            animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
-            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-[-60px] right-[-40px] w-[300px] h-[300px] rounded-full bg-white/10 blur-[100px] pointer-events-none"
-          />
-          <motion.div
-            animate={{ x: [0, -20, 0], y: [0, 25, 0] }}
-            transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute bottom-[-40px] left-[-30px] w-[250px] h-[250px] rounded-full bg-sky-300/10 blur-[80px] pointer-events-none"
-          />
+          <div className="absolute top-[-60px] right-[-40px] w-[300px] h-[300px] rounded-full bg-white/10 blur-[100px] pointer-events-none animate-orb-1" />
+          <div className="absolute bottom-[-40px] left-[-30px] w-[250px] h-[250px] rounded-full bg-sky-300/10 blur-[80px] pointer-events-none animate-orb-2" />
 
           <div className="relative px-8 py-12 sm:px-14 sm:py-14 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="text-center md:text-left max-w-xl">

@@ -59,21 +59,9 @@ export default function ExperienceSection() {
         }}
       >
         {/* Animated orbs */}
-        <motion.div
-          animate={{ x: [0, 40, 0], y: [0, -30, 0], scale: [1, 1.2, 1] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[-100px] right-[-50px] w-[500px] h-[500px] rounded-full bg-white/10 blur-[120px] pointer-events-none"
-        />
-        <motion.div
-          animate={{ x: [0, -30, 0], y: [0, 40, 0], scale: [1, 1.15, 1] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-[-80px] left-[-60px] w-[400px] h-[400px] rounded-full bg-sky-300/15 blur-[100px] pointer-events-none"
-        />
-        <motion.div
-          animate={{ x: [0, 20, 0], y: [0, -20, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/3 left-1/2 w-[250px] h-[250px] rounded-full bg-white/5 blur-[80px] pointer-events-none"
-        />
+        <div className="absolute top-[-100px] right-[-50px] w-[500px] h-[500px] rounded-full bg-white/10 blur-[120px] pointer-events-none animate-orb-1" />
+        <div className="absolute bottom-[-80px] left-[-60px] w-[400px] h-[400px] rounded-full bg-sky-300/15 blur-[100px] pointer-events-none animate-orb-2" />
+        <div className="absolute top-1/3 left-1/2 w-[250px] h-[250px] rounded-full bg-white/5 blur-[80px] pointer-events-none animate-orb-3" />
 
         <div className="relative p-8 sm:p-12 lg:p-16">
           {/* Header */}
@@ -134,11 +122,7 @@ export default function ExperienceSection() {
                   className="relative z-10"
                 >
                   <div className="w-5 h-5 rounded-full bg-brand-gold shadow-[0_0_24px_rgba(255,200,0,0.5)] border-[3px] border-brand-gold/50" />
-                  <motion.div
-                    animate={{ scale: [1, 1.8, 1], opacity: [0.5, 0, 0.5] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
-                    className="absolute inset-0 rounded-full bg-brand-gold/40"
-                  />
+                  <div className="absolute inset-0 rounded-full bg-brand-gold/40 animate-pulse-dot" style={{ animationDelay: `${i * 0.3}s` }} />
                 </motion.div>
               ))}
             </div>
@@ -207,11 +191,7 @@ export default function ExperienceSection() {
                 <div className="flex flex-col items-center">
                   <div className="relative">
                     <div className="w-4 h-4 rounded-full bg-brand-gold shadow-[0_0_20px_rgba(255,200,0,0.5)] border-[2.5px] border-brand-gold/40 flex-shrink-0 z-10" />
-                    <motion.div
-                      animate={{ scale: [1, 2, 1], opacity: [0.4, 0, 0.4] }}
-                      transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
-                      className="absolute inset-0 rounded-full bg-brand-gold/30"
-                    />
+                    <div className="absolute inset-0 rounded-full bg-brand-gold/30 animate-pulse-dot" style={{ animationDelay: `${i * 0.3}s` }} />
                   </div>
                   {i < steps.length - 1 && (
                     <div className="w-px flex-1 bg-gradient-to-b from-white/30 to-white/5" />

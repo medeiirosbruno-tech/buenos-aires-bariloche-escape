@@ -61,14 +61,12 @@ export default function HeroSection() {
           transition={{ duration: 0.6 }}
           className="mb-4 sm:mb-6 mt-24"
         >
-          <motion.span
-            animate={{ scale: [1, 1.05, 1] }}
-            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:px-5 sm:py-2.5 rounded-2xl bg-electric-azure/10 border border-electric-azure/20 text-electric-azure text-xs sm:text-sm font-medium backdrop-blur-md shadow-[0_8px_32px_-8px_rgba(0,132,237,0.2)]"
+          <span
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:px-5 sm:py-2.5 rounded-2xl bg-electric-azure/10 border border-electric-azure/20 text-electric-azure text-xs sm:text-sm font-medium backdrop-blur-md shadow-[0_8px_32px_-8px_rgba(0,132,237,0.2)] animate-badge-pulse"
           >
             <Calendar className="w-4 h-4" />
             Viaje em Setembro
-          </motion.span>
+          </span>
         </motion.div>
 
         <motion.h1

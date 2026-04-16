@@ -72,13 +72,9 @@ export default function BuenosAiresSection() {
           </p>
 
           {/* Floating gift balloon */}
-          <motion.div
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="mx-auto mt-6 w-fit px-5 py-2.5 rounded-2xl bg-secondary/20 border border-secondary/30 backdrop-blur-sm shadow-lg"
-          >
+          <div className="mx-auto mt-6 w-fit px-5 py-2.5 rounded-2xl bg-secondary/20 border border-secondary/30 backdrop-blur-sm shadow-lg animate-float-y">
             <span className="text-sm font-bold text-foreground">🎁 Escolha um passeio por nossa conta!</span>
-          </motion.div>
+          </div>
         </motion.div>
 
         <div className="space-y-16 sm:space-y-24">

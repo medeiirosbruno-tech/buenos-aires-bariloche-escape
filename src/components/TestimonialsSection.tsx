@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
-import React, { useRef, useEffect, useState } from "react";
 import avatar1 from "@/assets/avatar-1.jpg";
 import avatar2 from "@/assets/avatar-2.jpg";
 import avatar3 from "@/assets/avatar-3.jpg";
@@ -48,36 +47,6 @@ const testimonials = [
 const duplicated = [...testimonials, ...testimonials];
 
 export default function TestimonialsSection() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [isPaused, setIsPaused] = useState(false);
-  const animationRef = useRef<number>(0);
-  const scrollPos = useRef(0);
-
-  useEffect(() => {
-    const container = scrollRef.current;
-    if (!container) return;
-
-    const isMobile = window.innerWidth < 768;
-    const speed = isMobile ? 2.8 : 0.5;
-    const halfWidth = container.scrollWidth / 2;
-
-    const animate = () => {
-      if (!isPaused) {
-        scrollPos.current += speed;
-        if (scrollPos.current >= halfWidth) {
-          scrollPos.current = 0;
-        }
-        container.scrollLeft = scrollPos.current;
-      }
-      animationRef.current = requestAnimationFrame(animate);
-    };
-
-    animationRef.current = requestAnimationFrame(animate);
-    return () => {
-      if (animationRef.current) cancelAnimationFrame(animationRef.current);
-    };
-  }, [isPaused]);
-
   return (
     <section className="py-20 sm:py-28 bg-surface-cool overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -107,35 +76,27 @@ export default function TestimonialsSection() {
         </motion.div>
       </div>
 
-      {/* Horizontal scrolling carousel */}
-      <div
-        ref={scrollRef}
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-        onTouchStart={() => setIsPaused(true)}
-        onTouchEnd={() => setIsPaused(false)}
-        className="flex gap-5 overflow-x-hidden px-6 py-8 will-change-scroll"
-        style={{ scrollBehavior: "auto", willChange: "scroll-position" }}
-      >
-        {duplicated.map((t, i) => (
-          <motion.div
-            key={`${t.name}-${i}`}
-            whileHover={{ y: -4, scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-            className="flex-shrink-0 w-[300px] sm:w-[340px] p-6 rounded-[2rem] bg-white border border-border/40 shadow-xl hover:shadow-2xl transition-all duration-500"
-          >
-            <div className="mb-4">
-              <p className="text-sm font-semibold text-foreground">{t.name}</p>
-              <p className="text-xs text-muted-foreground">{t.city}</p>
+      {/* CSS-only marquee — GPU accelerated, pauses on hover/touch */}
+      <div className="relative overflow-hidden py-8">
+        <div className="flex gap-5 px-6 w-max animate-marquee-x">
+          {duplicated.map((t, i) => (
+            <div
+              key={`${t.name}-${i}`}
+              className="flex-shrink-0 w-[300px] sm:w-[340px] p-6 rounded-[2rem] bg-white border border-border/40 shadow-xl"
+            >
+              <div className="mb-4">
+                <p className="text-sm font-semibold text-foreground">{t.name}</p>
+                <p className="text-xs text-muted-foreground">{t.city}</p>
+              </div>
+              <div className="flex gap-0.5 mb-3">
+                {Array.from({ length: t.rating }).map((_, j) => (
+                  <Star key={j} className="w-3.5 h-3.5 fill-brand-gold text-brand-gold" />
+                ))}
+              </div>
+              <p className="text-foreground/80 leading-relaxed text-sm">"{t.text}"</p>
             </div>
-            <div className="flex gap-0.5 mb-3">
-              {Array.from({ length: t.rating }).map((_, j) => (
-                <Star key={j} className="w-3.5 h-3.5 fill-brand-gold text-brand-gold" />
-              ))}
-            </div>
-            <p className="text-foreground/80 leading-relaxed text-sm">"{t.text}"</p>
-          </motion.div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -192,9 +192,11 @@
   50% { transform: scale(1.8); opacity: 0; }
 }
 
-@keyframes badge-pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+}
+
+@keyframes marquee-x {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 
 @layer utilities {
@@ -221,5 +223,15 @@
   .animate-badge-pulse {
     animation: badge-pulse 2.5s ease-in-out infinite;
     will-change: transform;
+  }
+  .animate-marquee-x {
+    animation: marquee-x 40s linear infinite;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  .animate-marquee-x:hover,
+  .animate-marquee-x:active {
+    animation-play-state: paused;
   }
 }

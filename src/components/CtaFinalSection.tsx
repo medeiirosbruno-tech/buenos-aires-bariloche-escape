@@ -126,7 +126,7 @@ export default function CtaFinalSection() {
             </div>
 
             <motion.a
-              href="https://wa.me/5521999999999"
+              href="https://wa.me/5532991751139?text=Oi%2C%20eu%20tenho%20interesse%20no%20pacote%20de%20Bariloche%20e%20Buenos%20Aires%202026"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}

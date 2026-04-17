@@ -14,7 +14,7 @@ const included = [
 
 const notes = [
   "Valores sujeitos à alteração conforme cotação do aéreo",
-  "Valor base para saída do GIG",
+  "Valor base para saída do GRU",
   "Acomodação em apartamento duplo",
   "Apt. single com valor diferenciado",
   "Hotel sujeito a disponibilidade (mesmo padrão)",
@@ -97,7 +97,7 @@ export default function PricingSection() {
                     </motion.span>
                   </div>
                   <p className="text-glacier/50 text-sm mt-1">
-                    por pessoa · apto duplo · saída GIG
+                    por pessoa · apto duplo · saída GRU
                   </p>
 
                   {/* Cartão micro card */}

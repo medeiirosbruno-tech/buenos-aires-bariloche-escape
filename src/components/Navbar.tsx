@@ -49,7 +49,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="https://wa.me/5500000000000?text=Olá! Tenho interesse no pacote"
+            href="https://wa.me/5532991751139?text=Oi%2C%20eu%20tenho%20interesse%20no%20pacote%20de%20Bariloche%20e%20Buenos%20Aires%202026"
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2 rounded-full bg-gradient-gold text-brand-gold-foreground text-sm font-bold hover:scale-105 transition-transform"
@@ -85,7 +85,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="https://wa.me/5500000000000"
+              href="https://wa.me/5532991751139?text=Oi%2C%20eu%20tenho%20interesse%20no%20pacote%20de%20Bariloche%20e%20Buenos%20Aires%202026"
               target="_blank"
               rel="noopener noreferrer"
               className="block text-center px-5 py-3 rounded-full bg-gradient-gold text-brand-gold-foreground text-sm font-bold"

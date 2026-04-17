@@ -109,7 +109,7 @@ export default function PricingSection() {
                 </div>
 
                 <motion.a
-                  href="https://wa.me/5500000000000?text=Olá! Tenho interesse no pacote Bariloche + Buenos Aires"
+                  href="https://wa.me/5532991751139?text=Oi%2C%20eu%20tenho%20interesse%20no%20pacote%20de%20Bariloche%20e%20Buenos%20Aires%202026"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.03, y: -2 }}

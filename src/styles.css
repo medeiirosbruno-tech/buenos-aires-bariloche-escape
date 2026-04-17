@@ -192,7 +192,6 @@
   50% { transform: scale(1.8); opacity: 0; }
 }
 
-}
 
 @keyframes marquee-x {
   0% { transform: translate3d(0, 0, 0); }

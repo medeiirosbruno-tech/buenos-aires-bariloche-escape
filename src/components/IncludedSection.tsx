@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Plane, Hotel, Bus, Map, Shield, Headphones } from "lucide-react";
 
 const items = [
-  { icon: Plane, title: "Aéreo Ida e Volta", desc: "Bagagem de mão 10kg + 1 mochila" },
+  { icon: Plane, title: "Aéreo Ida e Volta", desc: "Saídas: GIG/POA/GRU/CWB/FLN/CNF/CGB/CGR · Bagagem de mão 10kg + 1 mochila" },
   { icon: Hotel, title: "Hospedagem Premium", desc: "7 noites em hotéis selecionados" },
   { icon: Bus, title: "Transfers Completos", desc: "Chegada e saída em ambas cidades" },
   { icon: Map, title: "Passeios Inclusos", desc: "Buenos Aires e Bariloche" },

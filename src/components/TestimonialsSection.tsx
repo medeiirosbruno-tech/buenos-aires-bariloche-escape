@@ -58,7 +58,7 @@ export default function TestimonialsSection() {
     if (!container) return;
 
     const isMobile = window.innerWidth < 768;
-    const speed = isMobile ? 1.2 : 0.5;
+    const speed = isMobile ? 2.8 : 0.5;
     const halfWidth = container.scrollWidth / 2;
 
     const animate = () => {
